@@ -2,3 +2,12 @@
     text-decoration: none;
     margin-left: 15px;
 }
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
