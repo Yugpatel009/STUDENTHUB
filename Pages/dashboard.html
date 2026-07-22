@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <img src="../img/Logo.png" alt="Student Hub Logo">
+            <span>Student Hub</span>
+        </a>
+        <nav class="main-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="courses.html">Courses</a>
+            <a href="assignment.html">Assignments</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="result.html">Results</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+        <div class="header-actions">
+            <a class="btn btn-light" id="logoutLink" href="../index.html">Logout</a>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">Overview</p>
+                <h1>Student Dashboard</h1>
+                <p>Welcome back, Yug. Here is your academic summary.</p>
+            </div>
+            <a class="btn btn-primary" href="profile.html">View Profile</a>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span>Courses</span>
+                <strong>6</strong>
+                <p>Active this semester</p>
+            </article>
+            <article class="stat-card">
+                <span>Attendance</span>
+                <strong>86%</strong>
+                <p>Overall percentage</p>
+            </article>
+            <article class="stat-card">
+                <span>Assignments</span>
+                <strong>3</strong>
+                <p>Pending submissions</p>
+            </article>
+            <article class="stat-card">
+                <span>Result</span>
+                <strong>A</strong>
+                <p>Current grade average</p>
+            </article>
+        </section>
+
+        <section class="content-grid">
+            <article class="panel">
+                <h2>Today Schedule</h2>
+                <ul class="timeline">
+                    <li><span>09:00</span> Web Development</li>
+                    <li><span>11:00</span> Database Management</li>
+                    <li><span>02:00</span> Computer Networks</li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <h2>Portal Modules</h2>
+                <div class="module-list">
+                    <a href="courses.html">Course Info</a>
+                    <a href="assignment.html">Assignment Details</a>
+                    <a href="attendance.html">Attendance Info</a>
+                    <a href="result.html">Results</a>
+                    <a href="contact.html">Contact Support</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Student Hub. All rights reserved.</p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

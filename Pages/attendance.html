@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Attendance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <img src="../img/Logo.png" alt="Student Hub Logo">
+            <span>Student Hub</span>
+        </a>
+        <nav class="main-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="courses.html">Courses</a>
+            <a href="assignment.html">Assignments</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="result.html">Results</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">Records</p>
+                <h1>Attendance Info</h1>
+                <p>Subject-wise attendance summary for this semester.</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Total Classes</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>42</td>
+                            <td>38</td>
+                            <td>4</td>
+                            <td><span class="badge success">90%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Database Management</td>
+                            <td>40</td>
+                            <td>34</td>
+                            <td>6</td>
+                            <td><span class="badge success">85%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Computer Networks</td>
+                            <td>36</td>
+                            <td>29</td>
+                            <td>7</td>
+                            <td><span class="badge warning">80%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Student Hub. All rights reserved.</p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+</html>

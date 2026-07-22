@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Registration</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <img src="../img/Logo.png" alt="Student Hub Logo">
+            <span>Student Hub</span>
+        </a>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card">
+            <div class="auth-media">
+                <div class="login-left">
+                    <div class="quote-box">
+                        <h2 id="quote"></h2>
+                        <p id="author"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-form">
+                <p class="eyebrow">Join Portal</p>
+                <h1>Sign Up</h1>
+                <p>Create your Student Hub account.</p>
+
+                <form id="registerForm" action="login.html" method="get">
+                    <div class="form-group">
+                        <label for="student-name">Full Name</label>
+                        <input type="text" id="student-name" name="name" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-email">Email Address</label>
+                        <input type="email" id="student-email" name="email" placeholder="student@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-password">Password</label>
+                        <input type="password" id="student-password" name="password" placeholder="Create password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-role">Role</label>
+                        <select id="login-role" name="role" required>
+                            <option value="">Select role</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="course-group" style="display: none;">
+                        <label for="student-course">Course</label>
+                        <select id="student-course" name="course">
+                            <option value="">Select course</option>
+                            <option value="bca">BCA</option>
+                            <option value="bsc-it">BSc IT</option>
+                            <option value="mca">MCA</option>
+                        </select>
+                    </div>
+
+                    <label class="inline-check">
+                        <input type="checkbox" name="terms" required>
+                        I accept the portal terms
+                    </label>
+
+                    <button class="btn btn-primary full" type="submit">Create Account</button>
+                </form>
+
+                <p class="form-note">Already registered? <a href="login.html">Login here</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

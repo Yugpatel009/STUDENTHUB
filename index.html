@@ -3,31 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDENT-HUB</title>
-    <link rel="stylesheet" href="./student HUB project/css/style.css">
+    <title>Student Hub - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header> 
-        <h1>Welcome to STUDENT-HUB</h1>
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <img src="img/Logo.png" alt="Student Hub Logo">
+            <span>Student Hub</span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="Pages/contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a class="btn btn-light" href="Pages/login.html">Login</a>
+            <a class="btn btn-primary" href="Pages/register.html">Sign Up</a>
+        </div>
     </header>
+
     <main>
-        <p>STUDENT-HUB is a platform that provides resources and support for students to</p>
+        <section class="hero landing-hero">
+            <div class="hero-content">
+                <p class="eyebrow">Student Portal</p>
+                <h1>One place for every student task.</h1>
+                <p>Student Hub helps students manage courses, attendance, assignments, results, and profile details after a secure login.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="Pages/login.html">Login To Dashboard</a>
+                    <a class="btn btn-light" href="Pages/register.html">Create Account</a>
+                </div>
+                <div class="metric-row">
+                    <div>
+                        <strong>6+</strong>
+                        <span>Courses</span>
+                    </div>
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Portal Access</span>
+                    </div>
+                    <div>
+                        <strong>100%</strong>
+                        <span>Student Focused</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landing preview  -->
+            <div class="landing-preview">
+                <div class="preview-top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="preview-body">
+                    <div class="preview-sidebar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="preview-main">
+                        <h2>Student Dashboard</h2>
+                        <div class="preview-stats">
+                            <article>86%<span>Attendance</span></article>
+                            <article>3<span>Pending</span></article>
+                            <article>A<span>Grade</span></article>
+                        </div>
+                        <div class="preview-table">
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="section-title">
+                <p class="eyebrow">Features</p>
+                <h2>Everything students need after login</h2>
+                <p>Simple pages for daily academic work, built from your sitemap and wireframes.</p>
+            </div>
+
+            <div class="card-grid">
+                <article class="service-card">
+                    <h3>Course Info</h3>
+                    <p>View subject details, course progress, and learning modules.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Assignment Details</h3>
+                    <p>Check pending work, due dates, and submission status.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Attendance Info</h3>
+                    <p>Track total classes, present days, absent days, and percentage.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Results</h3>
+                    <p>See marks, grades, semester status, and performance summary.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="split-section" id="how-it-works">
+            <div>
+                <p class="eyebrow">How It Works</p>
+                <h2>Login first, then dashboard access</h2>
+                <p>The website now follows the correct student portal flow. Users first register or login, then they can open protected dashboard pages.</p>
+                <ol class="step-list">
+                    <li>Student opens the landing page.</li>
+                    <li>Student logs in or creates an account.</li>
+                    <li>After login, the dashboard opens automatically.</li>
+                    <li>Dashboard links open profile, attendance, assignments, courses, and results.</li>
+                </ol>
+            </div>
+            <div class="image-box">Student Study Area</div>
+        </section>
+
+        <section class="cta-section">
+            <p class="eyebrow">Ready To Start</p>
+            <h2>Open your Student Hub account</h2>
+            <p>Login to continue to the dashboard, or sign up if you are a new student.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a class="btn btn-primary" href="Pages/login.html">Login Now</a>
+                <a class="btn btn-light" href="Pages/register.html">Sign Up</a>
+            </div>
+        </section>
     </main>
 
-    <nav class="Navbar">
-            <a href="assignments.html">Assignments</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="contact.html">Contact</a>
-            <a href="courses.html">Courses</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="profile.html">Profile</a>
-            <a href="register.html">Register</a>
-            <a href="results.html">Results</a>
-            <a href="login.html">Login</a>
-    </nav>
-    <script src="script.js"></script>
-<div class="footer">
-    <p>&copy; 2023 STUDENT-HUB. All rights reserved.</p>
-</div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Student Hub. All rights reserved.</p>
+    </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

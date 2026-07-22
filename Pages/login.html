@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <img src="../img/Logo.png" alt="Student Hub Logo">
+            <span>Student Hub</span>
+        </a>
+        <nav class="main-nav">
+            <a href="../index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a class="btn btn-light" href="register.html">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card">
+            <div class="auth-media">
+                <div class="login-left">
+                    <div class="quote-box">
+                        <h2 id="quote"></h2>
+                        <p id="author"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-form">
+                <p class="eyebrow">Welcome Back</p>
+                <h1>Login</h1>
+                <p>Enter your account details to open the student dashboard.</p>
+
+                <form id="loginForm" action="dashboard.html" method="get">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" name="email" placeholder="student@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" placeholder="Enter password"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-role">Role</label>
+                        <select id="login-role" name="role" required>
+                            <option value="">Select role</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-row">
+                        <label class="inline-check">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+                        <a href="contact.html">Need help?</a>
+                    </div>
+
+                    <button class="btn btn-primary full" type="submit">Login</button>
+                </form>
+
+                <p class="form-note">New student? <a href="register.html">Create an account</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
