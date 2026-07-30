@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" role="img" aria-labelledby="title">
+  <title>Blue upward U arrow logo</title>
+  <defs>
+    <linearGradient id="logoBlue" x1="75" y1="245" x2="178" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061a43"/>
+      <stop offset="0.58" stop-color="#0b3479"/>
+      <stop offset="1" stop-color="#124b9e"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#logoBlue)" d="M67 90h45v82c0 14 5 26 15 36 10 9 22 14 36 14 15 0 28-5 38-16 10-10 15-23 15-38V72h-25l38-66 39 66h-25v96c0 25-8 47-25 65-17 17-38 26-63 26h-42c-25-8-44-22-57-42-14-19-21-42-21-68V90z"/>
+</svg>

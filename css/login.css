@@ -1,0 +1,77 @@
+/* ========================================================
+   LOGIN PAGE STYLES
+   Used only by Pages/login.html.
+   ======================================================== */
+
+.auth-page {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+}
+
+.auth-media {
+    background-color: #dfe8ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-left {
+    padding: 40px;
+    width: 100%;
+}
+
+.quote-box {
+    text-align: left;
+}
+
+#quote {
+    font-size: 24px;
+    font-weight: bold;
+    color: #146c70;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+#author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #456064;
+}
+
+.auth-form {
+    padding: 40px;
+}
+
+.auth-form h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.auth-form p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 850px) {
+    .auth-card {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-media {
+        display: none;
+    }
+}

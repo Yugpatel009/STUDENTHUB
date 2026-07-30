@@ -1,0 +1,49 @@
+/* ========================================================
+   ASSIGNMENT PAGE STYLES
+   Used only by Pages/assignment.html.
+   ======================================================== */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #eef4f5;
+    color: #333333;
+    font-weight: bold;
+}
+
+tr:hover td {
+    background-color: #f9fbfb;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #e5f5ee;
+    color: #16794f;
+}
+
+.warning {
+    background-color: #fff0dd;
+    color: #a96200;
+}

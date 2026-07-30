@@ -1,0 +1,261 @@
+/* ========================================================
+   HOME PAGE STYLES
+   Used only by index.html.
+   ======================================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 50px 5%;
+    align-items: center;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.metric-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.metric-row div {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.metric-row strong {
+    display: block;
+    font-size: 28px;
+    color: #146c70;
+}
+
+.metric-row span {
+    font-size: 14px;
+    color: #666666;
+}
+
+.landing-preview {
+    background-color: #dfe8ea;
+    border: 1px solid #c8d4d7;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.preview-top {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.preview-top span {
+    width: 12px;
+    height: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.preview-body {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 15px;
+    background-color: #f8fafc;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.preview-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview-sidebar div {
+    height: 15px;
+    background-color: #e2e8f0;
+    border-radius: 3px;
+}
+
+.preview-main h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.preview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.preview-stats article {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.preview-stats article span {
+    display: block;
+    font-size: 11px;
+    color: #718096;
+}
+
+.preview-table p {
+    height: 12px;
+    background-color: #e2e8f0;
+    margin-bottom: 6px;
+    border-radius: 3px;
+}
+
+.section {
+    padding: 60px 5%;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666666;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 25px;
+    transition: transform 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 14px;
+}
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 5%;
+    align-items: center;
+}
+
+.split-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.split-section p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.step-list {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.step-list li {
+    color: #333333;
+}
+
+.image-box {
+    background-color: #dfe8ea;
+    border: 1px solid #c8d4d7;
+    border-radius: 8px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #456064;
+    font-weight: bold;
+}
+
+.cta-section {
+    text-align: center;
+    padding: 60px 5%;
+    background-color: #eaf3f4;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    color: #666666;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 850px) {
+    .hero,
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}

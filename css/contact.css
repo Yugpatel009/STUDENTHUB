@@ -1,0 +1,41 @@
+/* ========================================================
+   CONTACT PAGE STYLES
+   Used only by Pages/contact.html.
+   ======================================================== */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.support-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.support-card h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid #eef4f5;
+    padding-bottom: 10px;
+}
+
+.support-card p {
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.support-card p strong {
+    color: #146c70;
+    display: inline-block;
+    width: 80px;
+}
+
+@media (max-width: 850px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
