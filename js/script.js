@@ -1,8 +1,3 @@
-/* ========================================================
-   STUDENT PORTAL - MAIN JAVASCRIPT
-   This script handles basic page authentication, form
-   submissions, and logging out.
-   ======================================================== */
 
 // Check if user is logged in for protected pages
 function checkAuthentication() {

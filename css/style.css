@@ -1,11 +1,4 @@
-/* ========================================================
-   STUDENT HUB PORTAL - COMMON STYLES
-   Shared styles used by all pages.
-   ======================================================== */
 
-/* --------------------------------------------------------
-   1. GLOBAL RESET & BASE STYLES
-   -------------------------------------------------------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +10,13 @@ body {
     background-color: #f4f6f8;
     color: #222222;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -36,9 +36,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-/* --------------------------------------------------------
-   2. HEADER & NAVIGATION BAR
-   -------------------------------------------------------- */
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -89,9 +87,7 @@ a:hover {
     gap: 10px;
 }
 
-/* --------------------------------------------------------
-   3. BUTTONS
-   -------------------------------------------------------- */
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -126,10 +122,6 @@ a:hover {
 .full {
     width: 100%;
 }
-
-/* --------------------------------------------------------
-   4. FORMS
-   -------------------------------------------------------- */
 .form-group {
     margin-bottom: 20px;
 }
@@ -180,9 +172,7 @@ a:hover {
     font-size: 14px;
 }
 
-/* --------------------------------------------------------
-   5. INTERIOR PAGE SHELL & PANELS
-   -------------------------------------------------------- */
+
 .page-shell {
     padding: 40px 5%;
 }
@@ -220,21 +210,18 @@ a:hover {
     padding-bottom: 10px;
 }
 
-/* --------------------------------------------------------
-   6. FOOTER
-   -------------------------------------------------------- */
+
 .site-footer {
     text-align: center;
     padding: 20px 5%;
+    margin-top: auto;
     background-color: #ffffff;
     border-top: 1px solid #dddddd;
     color: #666666;
     font-size: 14px;
 }
 
-/* --------------------------------------------------------
-   7. COMMON RESPONSIVE STYLES
-   -------------------------------------------------------- */
+
 @media (max-width: 850px) {
     .site-header {
         flex-direction: column;
