@@ -19,18 +19,13 @@
             <a href="login.html">Login</a>
             <a href="contact.html">Contact</a>
         </nav>
+        <div class="header-actions">
+            <a class="btn btn-light" id="logoutLink" href="../index.html">Logout</a>
+        </div>
     </header>
 
     <main class="auth-page">
         <section class="auth-card">
-            <div class="auth-media">
-                <div class="login-left">
-                    <div class="quote-box">
-                        <h2 id="quote"></h2>
-                        <p id="author"></p>
-                    </div>
-                </div>
-            </div>
             <div class="auth-form">
                 <p class="eyebrow">Join Portal</p>
                 <h1>Sign Up</h1>
@@ -51,6 +46,14 @@
                         <label for="student-password">Password</label>
                         <input type="password" id="student-password" name="password" placeholder="Create password"
                             required>
+                        <small class="password-msg" id="password-strength">Enter strong password</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password"
+                            placeholder="Confirm password" required>
+                        <small class="password-msg" id="confirm-password-msg"></small>
                     </div>
                     <div class="form-group">
                         <label for="login-role">Role</label>
@@ -80,6 +83,9 @@
                 </form>
 
                 <p class="form-note">Already registered? <a href="login.html">Login here</a></p>
+            </div>
+            <div class="auth-media">
+                <img class="signup-image" src="../img/login-illustration-theme.png" alt="Student using laptop illustration">
             </div>
         </section>
     </main>

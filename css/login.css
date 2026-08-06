@@ -24,33 +24,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: slideFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.login-left {
-    padding: 40px;
+.login-image {
     width: 100%;
-}
-
-.quote-box {
-    text-align: left;
-}
-
-#quote {
-    font-size: 24px;
-    font-weight: bold;
-    color: #146c70;
-    margin-bottom: 15px;
-    line-height: 1.4;
-}
-
-#author {
-    font-size: 14px;
-    font-weight: bold;
-    color: #456064;
+    height: 100%;
+    min-height: 560px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .auth-form {
     padding: 40px;
+    animation: slideFromRight 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .auth-form h1 {
@@ -61,6 +49,37 @@
 .auth-form p {
     color: #666666;
     margin-bottom: 25px;
+}
+
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(48px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auth-form,
+    .auth-media {
+        animation: none;
+    }
 }
 
 @media (max-width: 850px) {

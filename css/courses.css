@@ -15,12 +15,20 @@
 
 .course-thumb {
     background-color: #dfe8ea;
-    height: 150px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #456064;
     font-weight: bold;
+    overflow: hidden;
+}
+
+.course-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .course-card div:last-child {
