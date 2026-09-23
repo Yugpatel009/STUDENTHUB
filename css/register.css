@@ -1,4 +1,6 @@
-
+/* ==========================================================================
+   STUDENT HUB - REGISTRATION STYLES
+   ========================================================================== */
 
 .auth-page {
     padding: 50px 5%;
@@ -11,16 +13,17 @@
 .auth-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg, 12px);
     overflow: hidden;
-    max-width: 900px;
+    max-width: 920px;
     width: 100%;
+    box-shadow: var(--shadow-lg);
 }
 
 .auth-media {
-    background-color: #dfe8ea;
+    background-color: var(--bg-subtle);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,32 +42,35 @@
 .auth-form {
     padding: 40px;
     animation: slideFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    background-color: var(--bg-card);
 }
 
 .auth-form h1 {
     font-size: 32px;
+    font-weight: 800;
     margin-bottom: 10px;
+    color: var(--text-primary);
 }
 
 .auth-form p {
-    color: #666666;
+    color: var(--text-secondary);
     margin-bottom: 25px;
 }
 
 .password-msg {
     display: block;
     margin-top: 6px;
-    color: #a96200;
+    color: var(--accent-orange);
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .password-msg.success {
-    color: #16794f;
+    color: #10b981;
 }
 
 .password-msg.error {
-    color: #a96200;
+    color: var(--accent-orange);
 }
 
 @keyframes slideFromLeft {
@@ -72,7 +78,6 @@
         opacity: 0;
         transform: translateX(-48px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
@@ -84,7 +89,6 @@
         opacity: 0;
         transform: translateX(48px);
     }
-
     to {
         opacity: 1;
         transform: translateX(0);

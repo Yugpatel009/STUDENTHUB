@@ -1,0 +1,82 @@
+[
+  {
+    "id": "FAQ-301",
+    "question": "How do I view my enrolled courses and study materials?",
+    "answer": "Once logged in to your account, click on Courses in the top navigation or your dashboard overview. You will find syllabus outlines, lecture notes, professor contact details, and course progress indicators for all enrolled classes.",
+    "category": "Academics",
+    "helpfulCount": 84,
+    "lastUpdated": "2026-09-15"
+  },
+  {
+    "id": "FAQ-302",
+    "question": "How does attendance calculation and threshold warning work?",
+    "answer": "Attendance is updated daily by your professors. The portal calculates your overall percentage as well as individual subject breakdowns. If your attendance dips below 75%, an automated warning badge alerts you so that you remain eligible for semester exams.",
+    "category": "Attendance",
+    "helpfulCount": 92,
+    "lastUpdated": "2026-09-18"
+  },
+  {
+    "id": "FAQ-303",
+    "question": "What should I do if I forget my login password?",
+    "answer": "Navigate to the Support & Contact page to submit a password reset request to the department admin, or verify your university student email credentials with the registrar office help desk.",
+    "category": "Account",
+    "helpfulCount": 65,
+    "lastUpdated": "2026-09-10"
+  },
+  {
+    "id": "FAQ-304",
+    "question": "When are semester grades and final marks published?",
+    "answer": "Final exam grades are evaluated and published within 7-10 working days following final paper submissions. You can view your GPA, letter grade breakdown, and academic history under the Results module after logging in.",
+    "category": "Examinations",
+    "helpfulCount": 78,
+    "lastUpdated": "2026-09-12"
+  },
+  {
+    "id": "FAQ-305",
+    "question": "How can I submit pending assignments and verify submission status?",
+    "answer": "Go to the Assignments module. Each listed task displays the due date, title, and current badge (Pending or Submitted). Click on the Action button on any pending row to upload your file or mark it complete.",
+    "category": "Academics",
+    "helpfulCount": 59,
+    "lastUpdated": "2026-09-14"
+  },
+  {
+    "id": "FAQ-306",
+    "question": "How do I apply for official merit or fee waiver scholarships?",
+    "answer": "Merit scholarships are announced every semester on the Campus Notice Board. Eligible students with CGPA 8.5+ can download the application form from the Notice attachment link and submit it to the Student Welfare Office.",
+    "category": "Portal",
+    "helpfulCount": 51,
+    "lastUpdated": "2026-09-19"
+  },
+  {
+    "id": "FAQ-307",
+    "question": "Is Student Hub optimized for mobile devices and tablets?",
+    "answer": "Yes! Student Hub features a fluid, fully responsive layout with touch swipe gestures on the carousel, an intuitive mobile slide-out navigation menu, and full Dark Mode support for comfortable viewing anywhere.",
+    "category": "Portal",
+    "helpfulCount": 43,
+    "lastUpdated": "2026-09-16"
+  },
+  {
+    "id": "FAQ-308",
+    "question": "How do I update my profile details and contact information?",
+    "answer": "Visit the Student Profile page to view your current enrolled details. If you need to rectify phone numbers, residential addresses, or department records, click Contact Office to initiate a verified modification request.",
+    "category": "Account",
+    "helpfulCount": 38,
+    "lastUpdated": "2026-09-08"
+  },
+  {
+    "id": "FAQ-309",
+    "question": "What is the passing criteria for end-semester examinations?",
+    "answer": "Students must secure a minimum of 40% in theory exams, 50% in laboratory practicals, and maintain an aggregate SGPA of at least 5.0 to successfully pass the semester without backlogs.",
+    "category": "Examinations",
+    "helpfulCount": 71,
+    "lastUpdated": "2026-09-11"
+  },
+  {
+    "id": "FAQ-310",
+    "question": "How can I register for campus technical workshops and hackathons?",
+    "answer": "Head over to the Campus Hub (Events) page, select the Events tab, and browse through the upcoming workshops and hackathons. Click 'Register / View' on any event card to view venue details and register your seat.",
+    "category": "Academics",
+    "helpfulCount": 89,
+    "lastUpdated": "2026-09-21"
+  }
+]

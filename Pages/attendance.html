@@ -6,21 +6,64 @@
     <title>Student Hub - Attendance</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/attendance.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('studenthub_theme');
+            var theme = saved || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+        })();
+    </script>
 </head>
 <body>
     <header class="site-header">
         <a class="brand" href="../index.html">
             <img src="../img/logo.png" alt="Student Hub Logo">
         </a>
-        <nav class="main-nav">
+
+        <!-- Centered Floating Pill Navigation -->
+        <nav class="main-nav" aria-label="Attendance Navigation">
             <a href="dashboard.html">Dashboard</a>
             <a href="courses.html">Courses</a>
+            <a href="events.html">Campus Hub</a>
             <a href="assignment.html">Assignments</a>
-            <a href="attendance.html">Attendance</a>
+            <a href="attendance.html" class="active">Attendance</a>
             <a href="result.html">Results</a>
+            <a href="profile.html">Profile</a>
         </nav>
-        <div class="header-actions">
-            <a class="btn btn-light" id="logoutLink" href="../index.html">Logout</a>
+
+        <!-- Right Corner Actions & Controls -->
+        <div class="header-right">
+            <div class="header-actions">
+                <a class="btn-logout" id="logoutLink" href="../index.html">Logout</a>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme" type="button">
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <nav class="mobile-nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="courses.html">Courses</a>
+                <a href="events.html">Campus Hub</a>
+                <a href="assignment.html">Assignments</a>
+                <a href="attendance.html" class="active">Attendance</a>
+                <a href="result.html">Results</a>
+                <a href="profile.html">Profile</a>
+            </nav>
+            <div class="mobile-drawer-actions">
+                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../index.html">Logout</a>
+            </div>
         </div>
     </header>
 

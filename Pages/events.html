@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Campus Hub & Events Explorer</title>
+    <meta name="description" content="Explore campus events, student profiles, academic circulars, and FAQs dynamically fetched from external JSON files using Fetch API.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/events.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('studenthub_theme');
+            var theme = saved || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+        })();
+    </script>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a class="brand" href="../index.html">
+            <img src="../img/logo.png" alt="Student Hub Logo">
+        </a>
+
+        <!-- Centered Floating Navigation -->
+        <nav class="main-nav" aria-label="Campus Hub Navigation">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="courses.html">Courses</a>
+            <a href="events.html" class="active">Campus Hub</a>
+            <a href="assignment.html">Assignments</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="result.html">Results</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="header-right">
+            <div class="header-actions">
+                <a class="btn-logout" id="logoutLink" href="../index.html">Logout</a>
+            </div>
+
+            <!-- Light/Dark Mode Switcher -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme" type="button">
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+
+            <!-- Responsive Hamburger Menu -->
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <nav class="mobile-nav-links">
+                <a href="../index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="courses.html">Courses</a>
+                <a href="events.html" class="active">Campus Hub</a>
+                <a href="assignment.html">Assignments</a>
+                <a href="attendance.html">Attendance</a>
+                <a href="result.html">Results</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="mobile-drawer-actions">
+                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../index.html">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Introduction -->
+        <section class="hub-hero">
+            <div class="hub-hero-inner">
+                <div class="hub-hero-text">
+                    <p class="eyebrow">Interactive Campus Explorer</p>
+                    <h1>Campus Hub & Live Directory</h1>
+                    <p>Dynamically browse campus events, student directories, academic circulars, and FAQs rendered via Fetch API with live search, filters, sorting, and pagination.</p>
+                </div>
+                <div class="hub-source-badge">
+                    <span class="pulse-dot"></span>
+                    <span id="sourceBadgeText">Live JSON via Fetch API</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Explorer Area -->
+        <section class="explorer-container">
+            <!-- Navigation Tabs (Events, Students, Notices, FAQs) -->
+            <div class="hub-nav-tabs" role="tablist" aria-label="Data Explorer Categories">
+                <button class="hub-tab-btn active" data-tab="events" role="tab" aria-selected="true">
+                    <span>🎪 Campus Events</span>
+                    <span class="hub-tab-badge">12</span>
+                </button>
+                <button class="hub-tab-btn" data-tab="students" role="tab" aria-selected="false">
+                    <span>🎓 Student Profiles</span>
+                    <span class="hub-tab-badge">12</span>
+                </button>
+                <button class="hub-tab-btn" data-tab="notices" role="tab" aria-selected="false">
+                    <span>📢 Campus Notices</span>
+                    <span class="hub-tab-badge">10</span>
+                </button>
+                <button class="hub-tab-btn" data-tab="faqs" role="tab" aria-selected="false">
+                    <span>❓ FAQs & Answers</span>
+                    <span class="hub-tab-badge">10</span>
+                </button>
+            </div>
+
+            <!-- Toolbar: Real-time Search, Category Filter, Secondary Filter, Sort Order -->
+            <div class="hub-toolbar">
+                <div class="hub-toolbar-top">
+                    <!-- Live Search Bar -->
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="hubSearchInput" placeholder="Search by title, name, keyword, department, or skill..." aria-label="Search records">
+                        <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search">&times;</button>
+                    </div>
+
+                    <!-- Reset Filters Button -->
+                    <button type="button" class="btn-reset-filters" id="hubResetBtn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                            <path d="M3 3v5h5"></path>
+                        </svg>
+                        Reset Filters
+                    </button>
+                </div>
+
+                <!-- Secondary Filter & Sort Options -->
+                <div class="hub-filters-row">
+                    <!-- Category Dropdown -->
+                    <div class="filter-select-wrap">
+                        <label class="filter-label" for="hubCategoryFilter">Category:</label>
+                        <select id="hubCategoryFilter" class="filter-select">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+
+                    <!-- Secondary Filter (Status / Priority / Semester) -->
+                    <div class="filter-select-wrap" id="secondaryFilterWrap">
+                        <label class="filter-label" id="secondaryFilterLabel" for="hubSecondaryFilter">Status:</label>
+                        <select id="hubSecondaryFilter" class="filter-select">
+                            <option value="all">All Statuses</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort Order Dropdown -->
+                    <div class="filter-select-wrap">
+                        <label class="filter-label" for="hubSortBy">Sort By:</label>
+                        <select id="hubSortBy" class="filter-select">
+                            <option value="default">Default Order</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary & Page Size Controls -->
+            <div class="hub-summary-bar">
+                <div class="results-count-text" id="hubResultsCount">
+                    Showing <strong>0</strong> items
+                </div>
+                <div class="page-size-selector">
+                    <label for="hubPageSize">Items per page:</label>
+                    <select id="hubPageSize">
+                        <option value="6" selected>6</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dynamic Content Output Container -->
+            <div id="hubDataContainer" aria-live="polite">
+                <!-- Content will be injected dynamically via Fetch API & JavaScript -->
+            </div>
+
+            <!-- Interactive Pagination Controls -->
+            <nav class="hub-pagination-nav" id="hubPaginationNav" aria-label="Page navigation">
+                <!-- Pagination buttons generated dynamically -->
+            </nav>
+        </section>
+    </main>
+
+    <!-- Detail View Modal -->
+    <div id="hubDetailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="hubModalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="hubModalTitle">Item Details</h3>
+                <button class="modal-close-btn" data-modal-close aria-label="Close Modal" type="button">&times;</button>
+            </div>
+            <div class="modal-body" id="hubModalBody">
+                <!-- Injected dynamically -->
+            </div>
+            <div class="modal-footer" id="hubModalFooter">
+                <button class="btn btn-light" data-modal-close type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div id="hubToast" class="hub-toast" role="status" aria-live="polite"></div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Student Hub. All rights reserved. Built with Fetch API and dynamic rendering.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/data-explorer.js"></script>
+</body>
+</html>

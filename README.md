@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Student Hub - Website Details
 
 ## 1. Project Name
@@ -223,6 +222,40 @@ Note: This is a front-end demo project. Student, Teacher, and Admin roles are av
 - Shows support email, phone number, office address, and working time.
 - Helps visitors or students contact the support team.
 
+### Module 11: Campus Hub & Dynamic Data Explorer (Fetch API)
+
+**Page:** `Pages/events.html`
+
+**CSS Files:**
+
+- `css/style.css`
+- `css/events.css`
+
+**JavaScript Files:**
+
+- `js/script.js`
+- `js/data-explorer.js`
+
+**JSON Data Files:**
+
+- `data/events.json` (Campus Hackathons, Seminars, Workshops, Cultural, Sports)
+- `data/students.json` (Student directory profiles, CGPA, department, semester, skills)
+- `data/notices.json` (Circulars, exams, schedules, deadlines, priorities)
+- `data/faqs.json` (University knowledge base questions & answers)
+
+**Role Requirement:** Public & Student access
+
+**Details:**
+
+- Uses **Fetch API** (`fetch()`) to asynchronously load external JSON datasets.
+- Includes automated in-memory fallback for offline / `file:///` local browsing environments.
+- Features **Real-Time Live Search** across titles, keywords, skills, departments, and descriptions.
+- Features **Multi-Criteria Filtering** (by category, status, priority, and semester).
+- Features **Dynamic Sorting** (by Date, Alphabetical, CGPA, Seats, and Helpfulness).
+- Features **Interactive Pagination** (with configurable items-per-page, Prev/Next navigation, and page counters).
+- Includes Interactive Detail Modals with simulated seat reservations and profile detail views.
+- Includes Live FAQ search integration on the main landing page (`index.html`).
+
 ## 5. Folder Structure
 
 ```text
@@ -230,9 +263,15 @@ student HUB project/
 |-- index.html
 |-- README.md
 |-- sitemap.md
+|-- data/
+|   |-- events.json
+|   |-- students.json
+|   |-- notices.json
+|   `-- faqs.json
 |-- css/
 |   |-- style.css
 |   |-- index.css
+|   |-- events.css
 |   |-- login.css
 |   |-- register.css
 |   |-- dashboard.css
@@ -243,7 +282,8 @@ student HUB project/
 |   |-- profile.css
 |   `-- contact.css
 |-- js/
-|   `-- script.js
+|   |-- script.js
+|   `-- data-explorer.js
 |-- img/
 |   |-- logo.png
 |   |-- Logo1.png
@@ -261,6 +301,7 @@ student HUB project/
     |-- register.html
     |-- dashboard.html
     |-- courses.html
+    |-- events.html
     |-- assignment.html
     |-- attendance.html
     |-- result.html

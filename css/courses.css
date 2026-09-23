@@ -1,4 +1,6 @@
-
+/* ==========================================================================
+   STUDENT HUB - COURSES STYLES
+   ========================================================================== */
 
 .course-grid {
     display: grid;
@@ -7,19 +9,27 @@
 }
 
 .course-card {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md, 8px);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast, 0.2s), box-shadow var(--transition-fast, 0.2s), border-color var(--transition-fast, 0.2s);
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-primary);
 }
 
 .course-thumb {
-    background-color: #dfe8ea;
-    height: 160px;
+    background-color: var(--bg-subtle);
+    height: 170px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #456064;
+    color: var(--text-muted);
     font-weight: bold;
     overflow: hidden;
 }
@@ -29,29 +39,39 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-thumb img {
+    transform: scale(1.05);
 }
 
 .course-card div:last-child {
-    padding: 20px;
+    padding: 22px;
 }
 
 .course-card h2 {
     font-size: 20px;
+    font-weight: 700;
     margin-bottom: 10px;
+    color: var(--text-primary);
 }
 
 .course-card p {
     font-size: 14px;
-    color: #666666;
-    margin-bottom: 15px;
-    height: 60px;
-    overflow: hidden;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    min-height: 44px;
 }
 
 .course-card span {
-    font-weight: bold;
-    color: #146c70;
+    display: inline-block;
+    font-weight: 700;
+    color: var(--brand-primary);
     font-size: 14px;
+    background-color: var(--bg-accent-subtle);
+    padding: 4px 12px;
+    border-radius: var(--radius-full, 9999px);
 }
 
 @media (max-width: 850px) {

@@ -1,4 +1,6 @@
-
+/* ==========================================================================
+   STUDENT HUB - ASSIGNMENT STYLES
+   ========================================================================== */
 
 .table-wrap {
     overflow-x: auto;
@@ -12,35 +14,36 @@ table {
 
 th,
 td {
-    padding: 12px 15px;
+    padding: 14px 16px;
     text-align: left;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
 th {
-    background-color: #eef4f5;
-    color: #333333;
-    font-weight: bold;
+    background-color: var(--bg-accent-subtle);
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 tr:hover td {
-    background-color: #f9fbfb;
+    background-color: var(--bg-subtle);
 }
 
 .badge {
     display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    border-radius: var(--radius-full, 9999px);
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .success {
-    background-color: #e5f5ee;
-    color: #16794f;
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
 }
 
 .warning {
-    background-color: #fff0dd;
-    color: #a96200;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
 }

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "NOT-201",
+    "title": "Mid-Semester Examination Schedules & Room Allotment Published",
+    "category": "Examinations",
+    "date": "2026-09-21",
+    "priority": "High",
+    "author": "Controller of Examinations",
+    "department": "All Engineering Departments",
+    "description": "Mid-Semester assessments for Semester 3, 5, and 7 commence from October 14, 2026. Hall tickets and seating allotments are accessible via the portal.",
+    "attachment": "Mid_Semester_Schedule_Fall2026.pdf",
+    "badge": "Urgent"
+  },
+  {
+    "id": "NOT-202",
+    "title": "Elective Course Add/Drop Window Final Deadline Notice",
+    "category": "Academic",
+    "date": "2026-09-20",
+    "priority": "High",
+    "author": "Academic Registrar",
+    "department": "Dean of Academics",
+    "description": "The online course change and elective finalization portal will close strictly on September 28, 2026 at 11:59 PM. Late petitions will incur administrative penalty.",
+    "attachment": "Course_Change_Circular.pdf",
+    "badge": "Deadline"
+  },
+  {
+    "id": "NOT-203",
+    "title": "Merit Scholarship Applications Open for Academic Year 2026-27",
+    "category": "Scholarship",
+    "date": "2026-09-18",
+    "priority": "Medium",
+    "author": "Student Welfare Board",
+    "department": "Dean of Student Affairs",
+    "description": "Applications are invited from eligible students with CGPA >= 8.5 for University Merit and Need-cum-Merit tuition fee waiver scholarships.",
+    "attachment": "Scholarship_Criteria_Form.pdf",
+    "badge": "Financial Aid"
+  },
+  {
+    "id": "NOT-204",
+    "title": "Campus Library Extended Hours During Mid-Term Preparation",
+    "category": "Facility",
+    "date": "2026-09-17",
+    "priority": "Normal",
+    "author": "Chief Librarian",
+    "department": "Central Library",
+    "description": "The Central Reference Library and digital learning wing will remain open 24/7 beginning October 1 through October 25 to support study sessions.",
+    "attachment": "Library_Rules_Extended.pdf",
+    "badge": "Facility"
+  },
+  {
+    "id": "NOT-205",
+    "title": "National Technical Symposium Call for Papers & Project Posters",
+    "category": "Technical",
+    "date": "2026-09-15",
+    "priority": "Medium",
+    "author": "R&D Research Committee",
+    "department": "Computer Science & Engineering",
+    "description": "Undergraduate researchers are encouraged to submit 4-page IEEE formatted manuscripts or project posters on applied artificial intelligence and networks.",
+    "attachment": "Call_For_Papers_Template.docx",
+    "badge": "Research"
+  },
+  {
+    "id": "NOT-206",
+    "title": "Holiday Announcement: Gandhi Jayanti & University Recess",
+    "category": "Holiday",
+    "date": "2026-09-14",
+    "priority": "Normal",
+    "author": "Registrar General",
+    "department": "General Administration",
+    "description": "University academic blocks, administrative desks, and regular classes shall remain suspended on October 2, 2026 on account of Gandhi Jayanti.",
+    "attachment": null,
+    "badge": "Holiday"
+  },
+  {
+    "id": "NOT-207",
+    "title": "Compulsory 75% Attendance Compliance Rule Reminder",
+    "category": "Academic",
+    "date": "2026-09-12",
+    "priority": "High",
+    "author": "Dean Academic Affairs",
+    "department": "Academic Audit Cell",
+    "description": "Students with aggregate attendance below 75% across individual theory and laboratory subjects will be debarred from sitting for the end-term evaluations.",
+    "attachment": "Attendance_Policy_Handbook.pdf",
+    "badge": "Important"
+  },
+  {
+    "id": "NOT-208",
+    "title": "Hostel Fee Payment & Room Re-Allotment Guidelines",
+    "category": "Admissions",
+    "date": "2026-09-10",
+    "priority": "Normal",
+    "author": "Chief Warden Office",
+    "department": "Hostel Administration",
+    "description": "Hostelites must clear second installment mess and amenity payments by October 5 to retain current dormitory allocations.",
+    "attachment": "Hostel_Dues_Schedule.pdf",
+    "badge": "Hostel"
+  },
+  {
+    "id": "NOT-209",
+    "title": "Campus Placement Drive 2026: Pre-Placement Talk by Global Tech",
+    "category": "Placement",
+    "date": "2026-09-08",
+    "priority": "High",
+    "author": "Head of Corporate Relations",
+    "department": "Training & Placement Cell",
+    "description": "Pre-Placement briefing and online aptitude screening for Semester 7 students for Software Engineer and Data Analyst associate roles.",
+    "attachment": "Placement_Eligibility_List.xlsx",
+    "badge": "Careers"
+  },
+  {
+    "id": "NOT-210",
+    "title": "Annual Sports Meet Team Trials & Registration Schedule",
+    "category": "Sports",
+    "date": "2026-09-05",
+    "priority": "Normal",
+    "author": "Director of Sports",
+    "department": "Physical Education Department",
+    "description": "Selection trials for university football, basketball, badminton, and track athletic squads will take place between September 25 and September 30.",
+    "attachment": "Sports_Trial_Rules.pdf",
+    "badge": "Sports"
+  }
+]

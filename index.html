@@ -3,33 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Hub - Home</title>
+    <title>Student Hub - Modern Academic Portal</title>
+    <meta name="description" content="Student Hub is your unified academic portal for managing courses, attendance, assignments, and results.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function() {
+            var saved = localStorage.getItem('studenthub_theme');
+            var theme = saved || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.style.colorScheme = theme;
+        })();
+    </script>
 </head>
 <body>
+    <!-- Site Header with Modern Centered Nav & Right Corner Actions -->
     <header class="site-header">
         <a class="brand" href="index.html">
             <img src="img/logo.png" alt="Student Hub Logo">
         </a>
-        <nav class="main-nav">
-            <a href="index.html">Home</a>
+
+        <!-- Centered Floating Pill Navigation -->
+        <nav class="main-nav" aria-label="Main Navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="Pages/courses.html">Courses</a>
+            <a href="Pages/events.html">Campus Hub</a>
+            <a href="#faq">FAQ</a>
             <a href="Pages/contact.html">Contact</a>
         </nav>
-        <div class="header-actions">
 
-            <a class="btn btn-light" href="Pages/login.html">Login</a>
-            <a class="btn btn-primary" href="Pages/register.html">Sign Up</a>
-            <a class="btn btn-light" id="logoutLink" href="index.html">Logout</a>
+        <!-- Right Corner Actions & Controls -->
+        <div class="header-right">
+            <div class="header-actions">
+                <a class="btn-login" href="Pages/login.html">Login</a>
+                <a class="btn-signup" href="Pages/register.html">Sign Up</a>
+            </div>
+
+            <!-- Notification Center Dropdown Wrapper -->
+            <div class="notification-dropdown-wrapper">
+                <button id="notificationBtn" class="notification-btn" aria-label="Campus Announcements and Notifications" aria-expanded="false" aria-haspopup="true" type="button" title="Announcements & Notifications">
+                    <svg class="bell-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="notification-badge" id="notificationBadge">1</span>
+                </button>
+
+                <!-- Floating Notification Dropdown -->
+                <div class="notification-dropdown" id="notificationDropdown" role="region" aria-label="Campus Announcements">
+                    <div class="notification-dropdown-header">
+                        <div class="notification-title-wrap">
+                            <span class="notification-header-icon">🔔</span>
+                            <div>
+                                <h3>Announcements</h3>
+                                <p class="notification-subtitle">Campus updates & notices</p>
+                            </div>
+                        </div>
+                        <div class="notification-header-actions">
+                            <span class="notification-count-tag" id="notificationCountTag">1 New</span>
+                            <button id="markAllReadBtn" class="notification-read-btn" type="button">Mark Read</button>
+                        </div>
+                    </div>
+
+                    <div class="notification-list">
+                        <!-- Primary Announcement Card (Fall 2026) -->
+                        <div class="notification-item unread" id="announcementItemMain">
+                            <div class="notification-item-icon">📢</div>
+                            <div class="notification-item-body">
+                                <div class="notification-item-meta">
+                                    <span class="announcement-tag">Fall 2026</span>
+                                    <span class="notification-item-time">Active Notice</span>
+                                </div>
+                                <h4 class="notification-item-title">Mid-Semester Exam Schedules & Registration</h4>
+                                <p class="notification-item-desc">
+                                    Mid-Semester Exam schedules and course registration details are now officially published! Review your deadlines and course rosters.
+                                </p>
+                                <div class="notification-item-footer">
+                                    <button class="btn-notification-action" data-modal-target="#announcementModal" type="button">
+                                        View Full Details
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Calendar Notice -->
+                        <div class="notification-item">
+                            <div class="notification-item-icon">📅</div>
+                            <div class="notification-item-body">
+                                <div class="notification-item-meta">
+                                    <span class="announcement-tag secondary">Registration</span>
+                                    <span class="notification-item-time">Sep 28</span>
+                                </div>
+                                <h4 class="notification-item-title">Course Registration Deadline</h4>
+                                <p class="notification-item-desc">
+                                    Course add/drop portals close on September 28, 2026. Make sure your electives are finalized.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification-dropdown-footer">
+                        <button class="notification-modal-trigger-btn" data-modal-target="#announcementModal" type="button">
+                            <span>Open Semester Notice Board</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Light/Dark Theme Switcher Button -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme" type="button">
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+
+            <!-- Responsive Hamburger Button -->
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>   
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="Pages/courses.html">Courses</a>
+                <a href="Pages/events.html">Campus Hub</a>
+                <a href="#faq">FAQ</a>
+                <a href="Pages/contact.html">Contact</a>
+            </nav>
+            <div class="mobile-drawer-actions">
+                <a class="btn-login" style="text-align: center; justify-content: center;" href="Pages/login.html">Login</a>
+                <a class="btn-signup" style="text-align: center; justify-content: center;" href="Pages/register.html">Sign Up</a>
+            </div>
+        </div>
+    </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero landing-hero">
             <div class="hero-content">
-                <p class="eyebrow">Student Portal</p>
+                <p class="eyebrow">Smart Student Portal</p>
                 <h1>One place for every student task.</h1>
-                <p>Student Hub helps students manage courses, attendance, assignments, results, and profile details after a secure login.</p>
+                <p>Student Hub helps university students seamlessly manage courses, live attendance, assignments, exam results, and academic profiles.</p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="Pages/login.html">Login To Dashboard</a>
                     <a class="btn btn-light" href="Pages/register.html">Create Account</a>
@@ -37,7 +156,7 @@
                 <div class="metric-row">
                     <div>
                         <strong>6+</strong>
-                        <span>Courses</span>
+                        <span>Active Courses</span>
                     </div>
                     <div>
                         <strong>24/7</strong>
@@ -50,8 +169,8 @@
                 </div>
             </div>
 
-            <!-- Landing preview  -->
-            <div class="landing-preview">
+            <!-- Interactive Landing Preview Card -->
+            <div class="landing-preview" aria-hidden="true">
                 <div class="preview-top">
                     <span></span>
                     <span></span>
@@ -81,14 +200,232 @@
             </div>
         </section>
 
-        
+        <!-- Dynamic Image / Content Slider (Carousel) -->
+        <section class="carousel-section" aria-label="Academic Highlights Carousel">
+            <div class="section-title">
+                <p class="eyebrow">Featured Highlights</p>
+                <h2>Explore Academic Excellence</h2>
+                <p>Discover real-time coursework, lab projects, and collaborative learning resources.</p>
+            </div>
 
-        
+            <div class="carousel-container">
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide" style="background-image: url('img/web-development.jpg');">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge">Department of Software</span>
+                                <h3>Full-Stack Web Development</h3>
+                                <p>Master modern web architectures, responsive interfaces, JavaScript ecosystems, and full-stack project building.</p>
+                                <a href="Pages/courses.html" class="btn btn-primary">View Course Details</a>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide" style="background-image: url('img/database-management.jpg');">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge">Data Engineering</span>
+                                <h3>Database Systems & Normalization</h3>
+                                <p>Gain hands-on mastery of relational databases, high-performance query optimization, indexing, and ACID transactions.</p>
+                                <a href="Pages/courses.html" class="btn btn-primary">View Course Details</a>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide" style="background-image: url('img/computer-networks.jpg');">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge">Systems & Infrastructure</span>
+                                <h3>Computer Networks & Protocols</h3>
+                                <p>Deep-dive into network layers, socket programming, routing protocols, and cloud computing fundamentals.</p>
+                                <a href="Pages/courses.html" class="btn btn-primary">View Course Details</a>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide" style="background-image: url('img/student-hub-login.png');">
+                            <div class="carousel-overlay"></div>
+                            <div class="carousel-content">
+                                <span class="carousel-badge">Campus Community</span>
+                                <h3>Connected Student Ecosystem</h3>
+                                <p>Join thousands of students staying ahead with automated attendance alerts, assignment trackers, and instant grade checks.</p>
+                                <a href="Pages/register.html" class="btn btn-primary">Get Started Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" id="carouselPrevBtn" aria-label="Previous Slide" type="button">
+                        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="carouselNextBtn" aria-label="Next Slide" type="button">
+                        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="carousel-indicators" id="carouselDots" aria-label="Slide Selection Dots"></div>
+            </div>
+        </section>
+
+        <!-- Services & Features Section -->
+        <section class="section">
+            <div class="section-title">
+                <p class="eyebrow">Everything You Need</p>
+                <h2>Comprehensive Student Tools</h2>
+                <p>Designed to save your time so you can focus on mastering your subjects.</p>
+            </div>
+            <div class="card-grid">
+                <article class="service-card">
+                    <h3>Course Management</h3>
+                    <p>Track your enrolled subjects, course syllabus, professor contacts, and semester credits in one place.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Attendance Tracking</h3>
+                    <p>Monitor your attendance percentage per subject with instant threshold warnings before exams.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Assignment Vault</h3>
+                    <p>Never miss a submission deadline. Review pending tasks, instructor feedback, and earned grades.</p>
+                </article>
+                <article class="service-card">
+                    <h3>Results & GPA</h3>
+                    <p>Instant semester report cards, grade breakdown analysis, and academic performance history.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Collapsible FAQ (Accordion) Component -->
+        <section class="faq-section" id="faq">
+            <div class="faq-container">
+                <div class="section-title">
+                    <p class="eyebrow">Got Questions?</p>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find instant answers to common questions about using the Student Hub portal.</p>
+                </div>
+
+                <!-- Live FAQ Search Bar powered by Fetch API -->
+                <div style="max-width: 520px; margin: 0 auto 30px; position: relative;">
+                    <input type="text" id="homepageFaqSearch" placeholder="🔍 Search FAQs by question or keyword..." style="width: 100%; padding: 12px 20px; border: 1px solid var(--border-color); border-radius: var(--radius-full); background: var(--bg-card); color: var(--text-primary); font-size: 15px; box-shadow: var(--shadow-sm); outline: none;" aria-label="Search FAQs">
+                </div>
+
+                <div class="faq-list" role="region" aria-label="Frequently Asked Questions">
+                    <!-- FAQ 1 (Expanded by default) -->
+                    <div class="faq-item active">
+                        <button class="faq-trigger" aria-expanded="true" type="button">
+                            <span class="faq-question-text">
+                                <span class="faq-badge">Academics</span>
+                                How do I view my enrolled courses and study materials?
+                            </span>
+                            <span class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-content">
+                                <div class="faq-content-inner">
+                                    Once logged in to your account, click on <strong>Courses</strong> in the top navigation or your dashboard overview. You'll find syllabus outlines, lecture notes, professor contact details, and course progress indicators for all enrolled classes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false" type="button">
+                            <span class="faq-question-text">
+                                <span class="faq-badge">Attendance</span>
+                                How does attendance calculation work?
+                            </span>
+                            <span class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-content">
+                                <div class="faq-content-inner">
+                                    Attendance is updated daily by your professors. The portal calculates your overall percentage as well as individual subject breakdown. If your attendance dips below 75%, an automated alert helps you stay on track for exam eligibility.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false" type="button">
+                            <span class="faq-question-text">
+                                <span class="faq-badge">Account</span>
+                                What should I do if I forget my login password?
+                            </span>
+                            <span class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-content">
+                                <div class="faq-content-inner">
+                                    Navigate to the <a href="Pages/contact.html">Support & Contact</a> page to submit a password reset request to the department admin, or verify your university email credentials with the registrar's office.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false" type="button">
+                            <span class="faq-question-text">
+                                <span class="faq-badge">Mobile</span>
+                                Is Student Hub optimized for smartphones and tablets?
+                            </span>
+                            <span class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-content">
+                                <div class="faq-content-inner">
+                                    Yes! Student Hub features a fluid, fully responsive layout with touch swipe gestures on the carousel, an intuitive mobile slide-out navigation menu, and full Dark Mode support for comfortable viewing anywhere.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+                        <button class="faq-trigger" aria-expanded="false" type="button">
+                            <span class="faq-question-text">
+                                <span class="faq-badge">Grades</span>
+                                When are semester grades and final marks published?
+                            </span>
+                            <span class="faq-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            </span>
+                        </button>
+                        <div class="faq-panel">
+                            <div class="faq-content">
+                                <div class="faq-content-inner">
+                                    Final exam grades are published within 7-10 working days following evaluation. You can view your GPA, letter grade, and grade history under the <strong>Results</strong> module after logging in.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hub link -->
+                <div style="text-align: center; margin-top: 32px;">
+                    <a href="Pages/events.html" class="btn btn-light" style="display: inline-flex; align-items: center; gap: 8px;">
+                        <span>Explore Full Campus Hub (Events, Notices & Directory)</span>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call To Action Section -->
         <section class="cta-section">
-            <p class="eyebrow">Ready To Start</p>
-            <h2>Open your Student Hub account</h2>
-            <p>Login to continue to the dashboard, or sign up if you are a new student.</p>
+            <p class="eyebrow">Ready To Excel?</p>
+            <h2>Open your Student Hub account today</h2>
+            <p>Login to access your personalized academic dashboard or register as a new student.</p>
             <div class="hero-actions" style="justify-content: center;">
                 <a class="btn btn-primary" href="Pages/login.html">Login Now</a>
                 <a class="btn btn-light" href="Pages/register.html">Sign Up</a>
@@ -96,9 +433,43 @@
         </section>
     </main>
 
+    <!-- Site Footer -->
     <footer class="site-footer">
-        <p>&copy; 2026 Student Hub. All rights reserved.</p>
+        <p>&copy; 2026 Student Hub. All rights reserved. Built for modern student success.</p>
     </footer>
+
+    <!-- Reusable Modal Dialog Component -->
+    <div id="announcementModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modalTitle">
+                    <span class="faq-badge">NOTICE</span>
+                    Fall 2026 Academic Announcement
+                </h3>
+                <button class="modal-close-btn" data-modal-close aria-label="Close Announcement Modal" type="button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to the <strong>Fall 2026 Academic Semester</strong>! Important dates and portal deadlines have been scheduled as follows:</p>
+                <div class="modal-highlight-box">
+                    <strong>📅 Important Key Dates:</strong>
+                    <ul style="margin-top: 8px; margin-left: 20px; line-height: 1.8;">
+                        <li><strong>Course Registration Closes:</strong> September 28, 2026</li>
+                        <li><strong>Mid-Term Examination Week:</strong> October 14 – 22, 2026</li>
+                        <li><strong>Assignment Submission Portals:</strong> Open until Nov 5, 2026</li>
+                        <li><strong>Final Semester Results:</strong> December 18, 2026</li>
+                    </ul>
+                </div>
+                <p>Please review your course roster, ensure regular attendance above 75%, and check with your faculty advisor if any course conflicts occur.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-modal-close type="button">Got it, Close</button>
+                <a class="btn btn-primary" href="Pages/login.html">Go To Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Scripts -->
     <script src="js/script.js"></script>
+    <script src="js/data-explorer.js"></script>
 </body>
 </html>
