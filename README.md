@@ -9,7 +9,7 @@
 
 > **Charotar University of Science and Technology (CHARUSAT)**  
 > **Faculty of Technology and Engineering (FTE) • Department of Computer Engineering**  
-> **Course:** Web Development Frameworks (`ITUE203`) • **Practicals:** 7 through 15 Capstone Integration  
+> **Course:** Web Development Frameworks (`ITUE203`) • **Practicals:** 1 through 15 Full Semester Curriculum  
 > **Repository:** [https://github.com/Yugpatel009/STUDENTHUB.git](https://github.com/Yugpatel009/STUDENTHUB.git)
 
 ---
@@ -17,7 +17,7 @@
 ## 📖 Table of Contents
 1. [Project Overview](#-project-overview)
 2. [Architectural Highlights & Security](#-architectural-highlights--security)
-3. [Academic Practical Matrix (P7 – P15)](#-academic-practical-matrix-p7--p15)
+3. [Academic Practical Matrix (Practicals 1 – 15)](#-academic-practical-matrix-practicals-1--15)
 4. [Third Normal Form (3NF) Database Topology](#-third-normal-form-3nf-database-topology)
 5. [Turnkey Local Deployment Guide](#-turnkey-local-deployment-guide)
 6. [Default Verified Seed Credentials](#-default-verified-seed-credentials)
@@ -74,23 +74,157 @@ flowchart TD
 
 ---
 
-## 📚 Academic Practical Matrix (P7 – P15)
+## 📚 Academic Practical Matrix (Practicals 1 – 15)
 
-The codebase implements and automates all requirements defined by the **CHARUSAT ITUE203** syllabus:
+The StudentHub repository encompasses the complete semester-long **CHARUSAT FTE ITUE203 (Web Development Frameworks)** academic curriculum, progressing from initial client-side foundations through full-stack architecture, relational database normalization, and automated deployment verification.
 
-| Practical ID | Academic Topic / Focus Area | Key Architectural Modules | Automated Tests |
-|:---:|---|---|:---:|
-| **Practical 7** | Form Processing, Data Sanitization & File Storage | CSRF token validation, input sanitization, flat-file JSON and CSV persistence with `flock()` mutex. | 5 / 5 Pass |
-| **Practical 8** | Database Connectivity & Prepared Statements | Relational MySQL schema creation, PDO database driver, prepared statements, and SQL injection prevention. | 4 / 4 Pass |
-| **Practical 9** | User Registration & Password Hashing | Account registration form, Bcrypt password hashing (`cost=10`), duplicate email collision guard, and CSV synchronization. | 7 / 7 Pass |
-| **Practical 10** | Session Management, Security & Remember-Me | Session governance, session regeneration, 15-minute inactivity timeout, and SHA-256 dual-token remember-me cookie. | 7 / 7 Pass |
-| **Practical 11** | Student Record Management CRUD | Comprehensive student CRUD portal, soft-deletion (`is_active = 0`), GPA numerical filtering, and search pagination. | 6 / 6 Pass |
-| **Faculty Portal** | Academic Allocations & Coursework Management | Faculty role authorization, course assignment, student grade auditing, and coursework deadline tracking. | 6 / 6 Pass |
-| **Practical 12** | Campus Events & Poster File Uploads | Event management CRUD, poster upload with strict MIME type checking, capacity reservation, and responsive modal lifecycle. | 8 / 8 Pass |
-| **Practical 13** | Stored Procedures & RESTful JSON APIs | Transactional stored procedures (`sp_GetEventSummary`), analytical view querying, and RESTful JSON endpoint serialization. | 8 / 8 Pass |
-| **Practical 14** | Admin Command Center & Audit Governance | Real-time telemetry, user directory management, RBAC role mutation, last-administrator lockout defense, and automated log retention purge. | 8 / 8 Pass |
-| **Practical 15** | Final Integration, Diagnostics & Deployment | Master verification test runner, 3NF schema audit, persistent storage health telemetry, and turnkey deployment packaging. | 8 / 8 Pass |
-| **MASTER SUITE** | **Complete Full-Stack Academic Curriculum** | **All 10 Verification Suites Executed Sequentially** | **67 / 67 (100%)** |
+### Master Curriculum Summary Table (Practicals 1 through 15)
+
+| No. | Official Practical Title | Core Technology / Concept | CO Mapping | Primary Implementation Files | Verification / Status |
+|:---:|---|---|:---:|---|:---:|
+| **P1** | **Project Initiation, Requirement Analysis, Sitemap, Wireframe, and GitHub Setup** | Requirements, sitemap, wireframe, Git/GitHub, project folder structure | `CO1` | [`README.md`](README.md)<br>[`index.html`](index.html)<br>[`.gitignore`](.gitignore) | Verified Architecture |
+| **P2** | **Semantic HTML5 Pages with Accessibility-Ready Structure** | Semantic HTML5 (`header`, `nav`, `main`, `section`, `footer`), accessibility | `CO1, CO2` | [`index.html`](index.html)<br>[`Pages/contact.html`](Pages/contact.html) | WCAG Accessibility Ready |
+| **P3** | **Responsive UI Design using CSS Grid, Flexbox, and Bootstrap/Tailwind** | CSS Grid, Flexbox layout, media queries, mobile-first responsive design | `CO2` | [`css/style.css`](css/style.css)<br>[`css/index.css`](css/index.css) | Responsive Multi-Device UI |
+| **P4** | **JavaScript DOM Manipulation, Event Handling, and UI Interactivity** | DOM selection, event listeners, modal popup, hamburger drawer, `localStorage` | `CO3, CO4` | [`js/script.js`](js/script.js)<br>Theme Switcher Engine | Interactive DOM Verified |
+| **P5** | **Registration Form with Frontend Validation and User-Friendly Error Handling** | HTML5 forms, JavaScript validation, regular expressions, password strength meter | `CO1, CO3` | [`Pages/register.php`](Pages/register.php)<br>[`css/register.css`](css/register.css) | Client Validation Verified |
+| **P6** | **Rendering External JSON Data using Fetch API, Search and Filter** | JSON parsing, Fetch API, array manipulation (`filter`, `map`, `sort`), pagination | `CO3, CO4` | [`js/script.js`](js/script.js)<br>Dynamic Search & Filter | Asynchronous JSON Render |
+| **P7** | **PHP Form Processing with Server-Side Validation and CSV/JSON File Storage** | PHP form processing, POST handling, input sanitization, CSV/JSON file writing, `flock()` | `CO1, CO5` | [`StudentHUB_php/contact.php`](StudentHUB_php/contact.php)<br>[`StudentHUB_php/registered_users.csv`](StudentHUB_php/registered_users.csv)<br>[`StudentHUB_php/contact_messages.json`](StudentHUB_php/contact_messages.json) | `tests/test_practical7.php`<br>**5 / 5 Passed** |
+| **P8** | **MySQL Schema Design, ER Model, PDO Connectivity, and Prepared Statements** | MySQL relational schema, 3NF modeling, PDO driver, prepared statements, injection defense | `CO1, CO5` | [`student_hub_database.sql`](student_hub_database.sql)<br>[`StudentHUB_php/db.php`](StudentHUB_php/db.php)<br>[`test_db.php`](test_db.php) | `tests/test_practical8.php`<br>**4 / 4 Passed** |
+| **P9** | **Secure User Registration with Database Insert, Duplicate Email Check, and Password Hashing** | Secure account registration, Bcrypt hashing (`cost=10`), duplicate check, MySQLi prepared insert | `CO1, CO3, CO5` | [`Pages/register.php`](Pages/register.php)<br>[`StudentHUB_php/register.php`](StudentHUB_php/register.php)<br>[`StudentHUB_php/csrf.php`](StudentHUB_php/csrf.php) | `tests/test_practical9.php`<br>**7 / 7 Passed** |
+| **P10** | **Secure Login/Logout with Sessions, Role-Based Access, Timeout, and Remember-Me Token** | PHP sessions, `password_verify()`, session regeneration, 15m inactivity timeout, dual-token cookie | `CO1, CO5` | [`Pages/login.php`](Pages/login.php)<br>[`StudentHUB_php/login.php`](StudentHUB_php/login.php)<br>[`StudentHUB_php/logout.php`](StudentHUB_php/logout.php)<br>[`StudentHUB_php/auth.php`](StudentHUB_php/auth.php) | `tests/test_practical10.php`<br>**7 / 7 Passed** |
+| **P11** | **Student Management CRUD with Search, Filter, and MySQL Statements** | Student registry CRUD, MySQLi prepared queries, soft-deletion (`is_active = 0`), GPA filter | `CO1, CO4, CO5` | [`Pages/students.php`](Pages/students.php)<br>[`StudentHUB_php/students_crud.php`](StudentHUB_php/students_crud.php) | `tests/test_practical11.php`<br>**6 / 6 Passed** |
+| **FP** | **Faculty Portal: Academic Allocation & Grade Audit** *(Extended)* | Role-based course management, assignment allocation, student grade evaluation, faculty barriers | `CO1, CO4, CO5` | [`Pages/faculty.php`](Pages/faculty.php)<br>[`StudentHUB_php/courses_crud.php`](StudentHUB_php/courses_crud.php)<br>[`css/faculty.css`](css/faculty.css) | `tests/test_faculty_crud.php`<br>**6 / 6 Passed** |
+| **P12** | **Event Management CRUD with Poster Upload and File Validation** | Campus event management, poster upload, MIME checking (`finfo`), size validation ($\le 5\text{MB}$) | `CO1, CO4, CO5` | [`Pages/events.php`](Pages/events.php)<br>[`StudentHUB_php/events_crud.php`](StudentHUB_php/events_crud.php)<br>[`uploads/events/`](uploads/events/) | `tests/test_practical12.php`<br>**8 / 8 Passed** |
+| **P13** | **PHP JSON API and AJAX/Fetch-Based CRUD without Page Reload** | RESTful JSON API endpoints, asynchronous Fetch CRUD, analytical views, stored procedure `sp_GetEventSummary` | `CO3, CO4, CO5` | [`StudentHUB_php/events_crud.php`](StudentHUB_php/events_crud.php)<br>[`StudentHUB_php/students_crud.php`](StudentHUB_php/students_crud.php)<br>[`student_hub_database.sql`](student_hub_database.sql) | `tests/test_practical13.php`<br>**8 / 8 Passed** |
+| **P14** | **Admin Dashboard with Role-Based Access Control, Dynamic Menu, and Audit Log** | Centralized Admin Center, `requireRole('admin')`, user role mutation, last-admin defense, audit trail | `CO1, CO4, CO5` | [`Pages/admin.php`](Pages/admin.php)<br>[`StudentHUB_php/admin_crud.php`](StudentHUB_php/admin_crud.php)<br>[`StudentHUB_php/audit.php`](StudentHUB_php/audit.php)<br>[`css/admin.css`](css/admin.css) | `tests/test_practical14.php`<br>**8 / 8 Passed** |
+| **P15** | **Final Integration, Testing, Documentation, GitHub Submission, and Local Deployment** | Turnkey integration, 3NF schema audit, `.env` abstraction, deployment diagnostics center, master test runner | `CO2, CO4, CO5` | [`Pages/deployment.php`](Pages/deployment.php)<br>[`StudentHUB_php/deployment_api.php`](StudentHUB_php/deployment_api.php)<br>[`tests/test_all_practicals.php`](tests/test_all_practicals.php)<br>[`.env.example`](.env.example) | `tests/test_practical15.php`<br>**8 / 8 Passed** |
+| **MASTER** | **Complete ITUE203 Capstone Verification** | **Unified sequential execution across all 10 academic test suites** | **All COs** | [`tests/test_all_practicals.php`](tests/test_all_practicals.php) | **10 / 10 Suites Pass<br>(67 / 67 Assertions)** |
+
+---
+
+### Detailed Syllabus Specifications & Problem Definitions
+
+#### 🎨 Part A: Client-Side Foundations & Interactive Frontend (Practicals 1 – 6)
+
+##### Practical 1: Project Initiation, Requirement Analysis, Sitemap, Wireframe, and GitHub Setup
+- **Problem Definition:** Initiate the semester-long StudentHub portal by identifying the problem scope, user roles, key modules, navigation flow, and minimum 10 pages. Create a sitemap, low-fidelity wireframe, project folder structure, README file, and GitHub repository.
+- **Key Questions Addressed:**
+  1. *What is URL and parts of URL?* &rarr; Decomposed into protocol (`http`/`https`), host (`localhost`), port (`80`), path (`/STUDENTHUB/`), and query string (`?action=list`).
+  2. *How does HTML file processed in web browser?* &rarr; Browser parses HTML into DOM tree, requests CSS to build CSSOM, combines them into Render Tree, computes layout, and paints pixels.
+  3. *How will page navigation flow managed among all HTML pages?* &rarr; Established consistent top pill navigation and mobile drawer navigation across all portal views.
+  4. *How will GitHub commits be maintained after each practical?* &rarr; Maintained atomic commits with standard descriptive commit messages and structured branch management.
+
+##### Practical 2: Semantic HTML5 Pages with Accessibility-Ready Structure
+- **Problem Definition:** Develop static HTML5 skeletons for at least 10 StudentHub pages such as Home, About, Register, Login, Dashboard, Events, Profile, Contact, Admin, FAQ, and Feedback. Use semantic tags and accessibility-friendly structure.
+- **Key Questions Addressed:**
+  1. *Are semantic tags such as `header`, `nav`, `main`, `section`, `article`, `aside`, and `footer` used properly?* &rarr; Yes, standard structural elements organize page hierarchy across all templates.
+  2. *Are form labels, headings, image alt text, and navigation links accessible?* &rarr; Yes, explicit `<label for="...">` bindings, `aria-label` attributes, and descriptive `alt` texts provide WCAG screen-reader compatibility.
+  3. *Is the page structure consistent across all pages?* &rarr; Yes, shared site header, floating pill navigation, main container shell, and footer layout ensure uniform UI.
+
+##### Practical 3: Responsive UI Design using CSS Grid, Flexbox, and Bootstrap/Tailwind
+- **Problem Definition:** Design responsive layouts for Home, About, Registration, Dashboard, and Events pages using CSS Grid and Flexbox. Optional to use CSS framework such as Bootstrap or Tailwind. Ensure mobile-first responsiveness.
+- **Key Questions Addressed:**
+  1. *How does the layout adapt for mobile, tablet, and desktop screens?* &rarr; Fluid CSS Grid layouts with `auto-fit`/`minmax(300px, 1fr)` and responsive media queries (`max-width: 980px`, `max-width: 768px`, `max-width: 480px`).
+  2. *Which layout technique is used and why?* &rarr; CSS Grid for two-dimensional dashboard matrices and Flexbox for one-dimensional navigation bars and card headers.
+  3. *Are typography, spacing, colors, and contrast readable?* &rarr; Yes, CSS design tokens (`--text-primary`, `--bg-card`, `--brand-primary`) ensure compliant contrast ratios in both light and dark themes.
+
+##### Practical 4: JavaScript DOM Manipulation, Event Handling, and UI Interactivity
+- **Problem Definition:** Add dynamic UI components such as collapsible FAQ, modal popup, image/content slider, notification banner, hamburger menu, and light/dark theme switcher using JavaScript.
+- **Key Questions Addressed:**
+  1. *How are DOM elements selected and modified?* &rarr; Selected via `document.getElementById()` and `document.querySelector()`, mutated via class list toggling and inner text updates.
+  2. *Are event listeners attached correctly?* &rarr; Yes, non-intrusive `addEventListener('click')` bindings with event delegation.
+  3. *Is `localStorage` used for remembering theme choice?* &rarr; Yes, persists user preference via `localStorage.setItem('studenthub_theme', theme)`.
+  4. *Does interactivity improve usability without breaking accessibility?* &rarr; Yes, modal traps focus and supports `Escape` key dismissal.
+
+##### Practical 5: Registration Form with Frontend Validation and User-Friendly Error Handling
+- **Problem Definition:** Create a student registration form with HTML5 input types and JavaScript validation for name, email, mobile number, password, confirm password, course, year, gender, and terms acceptance. Use Regular Expression for validations.
+- **Key Questions Addressed:**
+  1. *Are correct input types and attributes used?* &rarr; Yes, `type="email"`, `type="password"`, `type="tel"`, with `required` and `autocomplete` attributes.
+  2. *Are validation errors displayed near the relevant fields?* &rarr; Yes, contextual inline error messages display adjacent to invalid fields on blur/submit.
+  3. *Is password strength checked?* &rarr; Yes, dynamic strength meter assesses length, uppercase letters, numbers, and special symbols.
+  4. *Is the form accessible using keyboard and screen-reader-friendly labels?* &rarr; Yes, full keyboard navigation with visible focus rings.
+
+##### Practical 6: Rendering External JSON Data using Fetch API, Search and Filter
+- **Problem Definition:** Display event lists, student profiles, notices, or FAQs from external JSON files using Fetch API. Implement dynamic rendering, search, filter, sorting, and pagination.
+- **Key Questions Addressed:**
+  1. *How is JSON fetched, parsed, and rendered?* &rarr; Asynchronously fetched via `fetch()`, parsed with `response.json()`, and rendered using dynamic DOM template generation.
+  2. *Which array methods are used for search, filter, sort, and pagination?* &rarr; `Array.prototype.filter()` for keyword matching, `Array.prototype.sort()` for ordering, and `Array.prototype.slice()` for client-side pagination.
+  3. *How are loading and error states handled?* &rarr; Visual loading skeletons and graceful try/catch error banners.
+
+---
+
+#### ⚙️ Part B: Server-Side Engineering, Database & Full-Stack Integration (Practicals 7 – 15)
+
+##### Practical 7: PHP Form Processing with Server-Side Validation and CSV/JSON File Storage
+- **Problem Definition:** Process submitted registration/contact form data using PHP. Validate and sanitize inputs on the server side and store records in CSV or JSON file format. Display success/error messages.
+- **Key Questions Addressed:**
+  1. *Is the form submitted using POST?* &rarr; Yes, verified via `$_SERVER['REQUEST_METHOD'] === 'POST'`.
+  2. *Are inputs validated and sanitized server side?* &rarr; Yes, `filter_var()` sanitizes inputs and eliminates script tags.
+  3. *Is file writing handled safely?* &rarr; Yes, advisory locking via `flock($fp, LOCK_EX)` prevents concurrency corruption in `registered_users.csv` and `contact_messages.json`.
+  4. *Are success and error responses displayed clearly?* &rarr; Yes, structured JSON response payloads return HTTP 200 on success and HTTP 400 on validation failure.
+
+##### Practical 8: MySQL Schema Design, ER Model, PDO Connectivity, and Prepared Statements
+- **Problem Definition:** Design the database for StudentHub with students, events and registrations. Create PHP database connection using MySQL statements.
+- **Key Questions Addressed:**
+  1. *Is the schema normalized properly?* &rarr; Yes, normalized up to 3NF across 9 InnoDB tables.
+  2. *Are primary keys and foreign keys correctly defined?* &rarr; Yes, explicit `PRIMARY KEY` and `FOREIGN KEY` constraints enforce referential integrity with cascading deletes.
+  3. *Is the database connection handled securely?* &rarr; Yes, dual PDO and MySQLi wrappers with UTF-8 character encoding and parameterized prepared statements.
+
+##### Practical 9: Secure User Registration with Database Insert, Duplicate Email Check, and Password Hashing
+- **Problem Definition:** Implement secure user registration by inserting user details into MySQL using MySQLi. Validate input on frontend and backend, check duplicate email/username, hash passwords using `password_hash()`, and display appropriate messages.
+- **Key Questions Addressed:**
+  1. *Is `password_hash()` used before storing passwords?* &rarr; Yes, passwords hashed via `PASSWORD_BCRYPT` with cost factor 10.
+  2. *Is duplicate email/username checked?* &rarr; Yes, pre-insertion prepared query detects duplicates and returns HTTP 409 Conflict.
+  3. *Are frontend and backend validations consistent?* &rarr; Yes, frontend regex rules mirror server-side validation.
+
+##### Practical 10: Secure Login/Logout with Sessions, Role-Based Access, Timeout, and Remember-Me Token
+- **Problem Definition:** Develop secure login and logout functionality using PHP sessions. Verify password using `password_verify()`, regenerate session ID after login, restrict dashboard access, implement role-based redirection, session timeout, and optional secure remember-me token.
+- **Key Questions Addressed:**
+  1. *Are sessions started and destroyed securely?* &rarr; Yes, `session_regenerate_id(true)` prevents session fixation attacks. Logout terminates session files and expires session cookies.
+  2. *Is `password_verify()` used correctly?* &rarr; Yes, cryptographically verifies plaintext against MySQL Bcrypt hash.
+  3. *Is unauthorized dashboard access blocked?* &rarr; Yes, protected pages redirect (HTTP 302) unauthenticated requests to `login.php`.
+  4. *Is session timeout implemented?* &rarr; Yes, automatic timeout terminates sessions inactive for $>15$ minutes.
+  5. *Are admin and student users redirected to appropriate dashboards?* &rarr; Yes, automated redirection routes administrators to `admin.php` and students to `dashboard.php`.
+
+##### Practical 11: Student Management CRUD with Search, Filter, and MySQL Statements
+- **Problem Definition:** Create a student management module to add, view, edit, delete, search and filter student records. All database operations must use MySQLi statements and clear success/failure messages.
+- **Key Questions Addressed:**
+  1. *Are SELECT, INSERT, UPDATE, and DELETE operations working?* &rarr; Yes, full CRUD lifecycle operational.
+  2. *Is search by name/email/course implemented?* &rarr; Yes, multi-column search with debounced asynchronous queries.
+  3. *Are delete operations confirmed before execution?* &rarr; Yes, modal confirmation dialog with soft-deletion architecture (`is_active = 0`).
+
+##### Practical 12: Event Management CRUD with Poster Upload and File Validation
+- **Problem Definition:** Develop event management functionality for admin users. Admin can add, view, update, delete, and upload event posters with file type and file size validation.
+- **Key Questions Addressed:**
+  1. *Are add, update, and delete functionalities implemented correctly?* &rarr; Yes, faculty/admin CRUD operations with responsive modal lifecycle.
+  2. *Is the UI linked with the database correctly?* &rarr; Yes, live synchronized event cards and capacity reservations.
+  3. *Are poster uploads validated for type and size?* &rarr; Yes, server-side MIME detection (`finfo_file`) allows only `image/jpeg`, `image/png`, `image/webp` with a 5MB size limit.
+  4. *Are success and failure messages displayed?* &rarr; Yes, animated toast notifications for all operations.
+
+##### Practical 13: PHP JSON API and AJAX/Fetch-Based CRUD without Page Reload
+- **Problem Definition:** Create simple PHP JSON API endpoints for events or students and consume them using Fetch API. Perform list, add, update, and delete operations asynchronously without full page reload.
+- **Key Questions Addressed:**
+  1. *Do PHP endpoints return valid JSON responses?* &rarr; Yes, served with `header('Content-Type: application/json; charset=utf-8')`.
+  2. *Are GET and POST requests handled properly?* &rarr; Yes, routing cleanly separates read-only retrieval from mutating payloads.
+  3. *Are loading, success, and error states shown on the frontend?* &rarr; Yes, spinner animations and feedback modals handle all states.
+  4. *Is input validation performed before database operations?* &rarr; Yes, server-side sanitization guards all database queries.
+
+##### Practical 14: Admin Dashboard with Role-Based Access Control, Dynamic Menu, and Audit Log
+- **Problem Definition:** Develop an admin dashboard that displays user statistics, student count, event count and latest registrations. Restrict access to admin users only and show dynamic menu options based on role.
+- **Key Questions Addressed:**
+  1. *Are dashboard values loaded dynamically from the database?* &rarr; Yes, real-time KPI metrics aggregated from MySQL `information_schema` and analytical views.
+  2. *Is access restricted to admin users?* &rarr; Yes, strictly guarded by `requireRole('admin')` returning HTTP 403 for unauthorized users.
+  3. *Are role-based menus working?* &rarr; Yes, navigation displays administrative items only for administrators.
+  4. *Are important admin actions recorded in `audit_logs`?* &rarr; Yes, security events record actor ID, action, severity ranking, and client IP address.
+
+##### Practical 15: Final Integration, Testing, Documentation, GitHub Submission, and Local Deployment
+- **Problem Definition:** Integrate all modules into a single deployable StudentHub portal. Verify navigation, responsiveness, authentication, database operations, security checks, AJAX functionality, and documentation. Deploy locally using XAMPP/Apache virtual host and submit GitHub repository.
+- **Key Questions Addressed:**
+  1. *Are all pages properly linked and navigable?* &rarr; Yes, verified across desktop pill and mobile drawer navigations.
+  2. *Are sessions, roles, validations, and database operations working end-to-end?* &rarr; Yes, verified by the 67-assertion automated test runner.
+  3. *Are security and accessibility checklists completed?* &rarr; Yes, WCAG compliant with high contrast and CSRF defenses.
+  4. *Is project documentation sufficient for installation and testing?* &rarr; Yes, complete `.env.example`, SQL dump, and step-by-step guides provided.
+  5. *Is the project repository clean and properly committed?* &rarr; Yes, managed with `.gitignore` and modular directory architecture.
 
 ---
 
