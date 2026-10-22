@@ -73,6 +73,90 @@
     color: var(--accent-orange);
 }
 
+/* ── Field-level inline error ─────────────────────────────────────────── */
+.field-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #ef4444;
+    min-height: 16px;
+}
+
+/* ── Erroneous input highlight ────────────────────────────────────────── */
+.input-error {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, .25) !important;
+}
+
+/* ── Alert banner (success / error) ──────────────────────────────────── */
+.form-alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.form-alert ul {
+    margin: 6px 0 0 18px;
+    padding: 0;
+}
+.form-alert--success {
+    background: #064e3b;
+    color: #34d399;
+    border: 1px solid #059669;
+}
+.form-alert--error {
+    background: #7f1d1d;
+    color: #fca5a5;
+    border: 1px solid #b91c1c;
+}
+
+/* ── Password strength bar ────────────────────────────────────────────── */
+.strength-bar {
+    height: 4px;
+    background: var(--border-color, #334155);
+    border-radius: 4px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+.strength-fill {
+    height: 100%;
+    width: 0;
+    border-radius: 4px;
+    background: #ef4444;
+    transition: width .3s ease, background .3s ease;
+}
+
+/* ── Input + eye-toggle wrapper ───────────────────────────────────────── */
+.input-icon-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input-icon-wrap input {
+    flex: 1;
+    padding-right: 40px;
+}
+.toggle-pwd {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: var(--text-secondary, #94a3b8);
+    display: flex;
+    align-items: center;
+    transition: color .2s;
+}
+.toggle-pwd:hover { color: var(--text-primary, #f8fafc); }
+.toggle-pwd svg { width: 18px; height: 18px; }
+
+/* ── Spinner animation ────────────────────────────────────────────────── */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 @keyframes slideFromLeft {
     from {
         opacity: 0;

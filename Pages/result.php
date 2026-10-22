@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../StudentHUB_php/require_login.php';
+requireLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +27,19 @@
 
         <!-- Centered Floating Pill Navigation -->
         <nav class="main-nav" aria-label="Results Navigation">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="courses.html">Courses</a>
+            <a href="dashboard.php">Dashboard</a>
+            <a href="courses.php">Courses</a>
             <a href="events.html">Campus Hub</a>
-            <a href="assignment.html">Assignments</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="result.html" class="active">Results</a>
-            <a href="profile.html">Profile</a>
+            <a href="assignment.php">Assignments</a>
+            <a href="attendance.php">Attendance</a>
+            <a href="result.php" class="active">Results</a>
+            <a href="profile.php">Profile</a>
         </nav>
 
         <!-- Right Corner Actions & Controls -->
         <div class="header-right">
             <div class="header-actions">
-                <a class="btn-logout" id="logoutLink" href="../index.html">Logout</a>
+                <a class="btn-logout" id="logoutLink" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
 
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme" type="button">
@@ -53,16 +57,16 @@
         <!-- Mobile Drawer Navigation -->
         <div class="mobile-nav-drawer" id="mobileNavDrawer">
             <nav class="mobile-nav-links">
-                <a href="dashboard.html">Dashboard</a>
-                <a href="courses.html">Courses</a>
+                <a href="dashboard.php">Dashboard</a>
+                <a href="courses.php">Courses</a>
                 <a href="events.html">Campus Hub</a>
-                <a href="assignment.html">Assignments</a>
-                <a href="attendance.html">Attendance</a>
-                <a href="result.html" class="active">Results</a>
-                <a href="profile.html">Profile</a>
+                <a href="assignment.php">Assignments</a>
+                <a href="attendance.php">Attendance</a>
+                <a href="result.php" class="active">Results</a>
+                <a href="profile.php">Profile</a>
             </nav>
             <div class="mobile-drawer-actions">
-                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../index.html">Logout</a>
+                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
         </div>
     </header>

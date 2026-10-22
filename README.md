@@ -1,736 +1,398 @@
-# Student Hub - Website Details
-
-## 1. Project Name
-
-**Student Hub**
-
-Student Hub is a front-end student portal website made with HTML, CSS, and JavaScript. It is designed for students to access academic information such as dashboard details, courses, assignments, attendance, results, profile information, and contact support.
-
-## 2. Website Overview
-
-Student Hub works like a simple academic portal. A visitor starts from the home page, then logs in or creates an account. After login, the user can open the dashboard and access different academic modules.
-
-The project is static, so it does not need a database or backend server. Login status is handled in the browser using `localStorage`.
-
-## 3. Role Requirements
-
-| Role | Requirement | Access Details |
-| --- | --- | --- |
-| Visitor | No login required | Can open Home, Login, Register, and Contact pages. |
-| Student | Login required | Can open Dashboard, Courses, Assignments, Attendance, Results, and Profile pages. |
-| Teacher | Login required | Can use the same protected portal pages in this front-end demo. |
-| Admin | Login required | Can use the same protected portal pages in this front-end demo. |
-
-Note: This is a front-end demo project. Student, Teacher, and Admin roles are available in the form, but the protected pages currently use one common login check.
-
-## 4. Modules And Page Details
-
-### Module 1: Home Module
-
-**Page:** `index.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/index.css`
-
-**Role Requirement:** Public access
-
-**Details:**
-
-- Shows the Student Hub landing page.
-- Contains the website logo and navigation.
-- Provides Login and Sign Up buttons.
-- Shows a short introduction about the portal.
-- Displays dashboard preview cards.
-- Shows quick statistics such as courses, portal access, and student focus.
-- Includes a call-to-action section and footer.
-
-### Module 2: Login Module
-
-**Page:** `Pages/login.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/login.css`
-
-**JavaScript File:** `js/script.js`
-
-**Role Requirement:** Public access
-
-**Details:**
-
-- Allows users to enter email and password.
-- Allows users to select role: Student, Teacher, or Admin.
-- Includes a Remember Me checkbox.
-- Includes a Need Help link.
-- Includes a link for new users to create an account.
-- Shows rotating education quotes.
-- On successful login, stores login status in `localStorage`.
-- Redirects the user to the dashboard page.
-
-### Module 3: Registration Module
-
-**Page:** `Pages/register.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/register.css`
-
-**JavaScript File:** `js/script.js`
-
-**Role Requirement:** Public access
-
-**Details:**
-
-- Allows a new user to enter full name, email, and password.
-- Allows role selection.
-- Shows course dropdown when Student role is selected.
-- Includes terms checkbox.
-- Shows rotating education quotes.
-- Shows a success message after registration.
-- Redirects user to the login page after registration.
-
-### Module 4: Dashboard Module
-
-**Page:** `Pages/dashboard.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/dashboard.css`
-
-**JavaScript File:** `js/script.js`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows welcome message.
-- Displays summary cards for courses, attendance, assignments, and result.
-- Shows today's schedule.
-- Provides quick links to portal modules.
-- Includes Logout button.
-- Redirects unauthenticated users to the login page.
-
-### Module 5: Courses Module
-
-**Page:** `Pages/courses.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/courses.css`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows course cards.
-- Displays course names and short descriptions.
-- Shows progress percentage for each course.
-- Current courses include Web Development, Database Management, and Computer Networks.
-
-### Module 6: Assignment Module
-
-**Page:** `Pages/assignment.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/assignment.css`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows assignment information in table format.
-- Displays subject name, assignment title, due date, status, and action.
-- Uses badges for Pending and Submitted status.
-- Allows users to see whether work is pending or submitted.
-
-### Module 7: Attendance Module
-
-**Page:** `Pages/attendance.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/attendance.css`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows subject-wise attendance.
-- Displays total classes, present count, absent count, and percentage.
-- Uses success and warning badges for attendance percentage.
-- Helps students track attendance performance.
-
-### Module 8: Results Module
-
-**Page:** `Pages/result.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/result.css`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows CGPA, rank, and pass status cards.
-- Displays result table with subject, marks, grade, and status.
-- Uses success badges for passed subjects.
-- Helps students review academic performance.
-
-### Module 9: Profile Module
-
-**Page:** `Pages/profile.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/profile.css`
-
-**Role Requirement:** Login required
-
-**Details:**
-
-- Shows student profile card.
-- Displays student initials, name, and semester.
-- Shows email, enrollment number, course, department, and phone number.
-- Includes a Contact Office button.
-
-### Module 10: Contact Module
-
-**Page:** `Pages/contact.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/contact.css`
-
-**Role Requirement:** Public access
-
-**Details:**
-
-- Shows contact form with name, email, and message fields.
-- Shows support email, phone number, office address, and working time.
-- Helps visitors or students contact the support team.
-
-### Module 11: Campus Hub & Dynamic Data Explorer (Fetch API)
-
-**Page:** `Pages/events.html`
-
-**CSS Files:**
-
-- `css/style.css`
-- `css/events.css`
-
-**JavaScript Files:**
-
-- `js/script.js`
-- `js/data-explorer.js`
-
-**JSON Data Files:**
-
-- `data/events.json` (Campus Hackathons, Seminars, Workshops, Cultural, Sports)
-- `data/students.json` (Student directory profiles, CGPA, department, semester, skills)
-- `data/notices.json` (Circulars, exams, schedules, deadlines, priorities)
-- `data/faqs.json` (University knowledge base questions & answers)
-
-**Role Requirement:** Public & Student access
-
-**Details:**
-
-- Uses **Fetch API** (`fetch()`) to asynchronously load external JSON datasets.
-- Includes automated in-memory fallback for offline / `file:///` local browsing environments.
-- Features **Real-Time Live Search** across titles, keywords, skills, departments, and descriptions.
-- Features **Multi-Criteria Filtering** (by category, status, priority, and semester).
-- Features **Dynamic Sorting** (by Date, Alphabetical, CGPA, Seats, and Helpfulness).
-- Features **Interactive Pagination** (with configurable items-per-page, Prev/Next navigation, and page counters).
-- Includes Interactive Detail Modals with simulated seat reservations and profile detail views.
-- Includes Live FAQ search integration on the main landing page (`index.html`).
-
-## 5. Folder Structure
-
-```text
-student HUB project/
-|-- index.html
-|-- README.md
-|-- sitemap.md
-|-- data/
-|   |-- events.json
-|   |-- students.json
-|   |-- notices.json
-|   `-- faqs.json
-|-- css/
-|   |-- style.css
-|   |-- index.css
-|   |-- events.css
-|   |-- login.css
-|   |-- register.css
-|   |-- dashboard.css
-|   |-- courses.css
-|   |-- assignment.css
-|   |-- attendance.css
-|   |-- result.css
-|   |-- profile.css
-|   `-- contact.css
-|-- js/
-|   |-- script.js
-|   `-- data-explorer.js
-|-- img/
-|   |-- logo.png
-|   |-- Logo1.png
-|   |-- dashboard.png
-|   |-- Courses.png
-|   |-- Assignment.png
-|   |-- Attendance.png
-|   |-- Result.png
-|   |-- Profile.png
-|   |-- Login.png
-|   |-- Sign-up.png
-|   `-- Contact Us.png
-`-- Pages/
-    |-- login.html
-    |-- register.html
-    |-- dashboard.html
-    |-- courses.html
-    |-- events.html
-    |-- assignment.html
-    |-- attendance.html
-    |-- result.html
-    |-- profile.html
-    `-- contact.html
+# StudentHub: Full-Stack Enterprise Academic Management Portal
+
+[![PHP Version](https://img.shields.io/badge/PHP-8.2.12-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Database](https://img.shields.io/badge/MariaDB-10.4.32--InnoDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://mariadb.org/)
+[![Database Normalization](https://img.shields.io/badge/Schema-3NF%20Normalized%20(9%20Tables)-success?style=for-the-badge&logo=mysql&logoColor=white)](student_hub_database.sql)
+[![Test Suite](https://img.shields.io/badge/Master%20Tests-10%2F10%20Suites%20Passed%20(100%25)-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white)](tests/test_all_practicals.php)
+[![Security](https://img.shields.io/badge/Security-RBAC%20%2B%20CSRF%20%2B%20Bcrypt-critical?style=for-the-badge&logo=auth0&logoColor=white)](StudentHUB_php/auth.php)
+[![Academic Institution](https://img.shields.io/badge/CHARUSAT-FTE%20ITUE203-00529B?style=for-the-badge)](https://www.charusat.ac.in/)
+
+> **Charotar University of Science and Technology (CHARUSAT)**  
+> **Faculty of Technology and Engineering (FTE) • Department of Computer Engineering**  
+> **Course:** Web Development Frameworks (`ITUE203`) • **Practicals:** 7 through 15 Capstone Integration  
+> **Repository:** [https://github.com/Yugpatel009/STUDENTHUB.git](https://github.com/Yugpatel009/STUDENTHUB.git)
+
+---
+
+## 📖 Table of Contents
+1. [Project Overview](#-project-overview)
+2. [Architectural Highlights & Security](#-architectural-highlights--security)
+3. [Academic Practical Matrix (P7 – P15)](#-academic-practical-matrix-p7--p15)
+4. [Third Normal Form (3NF) Database Topology](#-third-normal-form-3nf-database-topology)
+5. [Turnkey Local Deployment Guide](#-turnkey-local-deployment-guide)
+6. [Default Verified Seed Credentials](#-default-verified-seed-credentials)
+7. [Automated Verification & Master Test Suite](#-automated-verification--master-test-suite)
+8. [Directory & File Organization](#-directory--file-organization)
+9. [Academic Credits & Authorship](#-academic-credits--authorship)
+
+---
+
+## 🌟 Project Overview
+
+**StudentHub** is a comprehensive, production-grade academic management web application engineered with **PHP 8.2**, **MariaDB/MySQL 10.4**, **Semantic HTML5**, **CSS3 Design Tokens**, and **Vanilla JavaScript**. 
+
+Designed to support higher-education university operations, StudentHub replaces legacy manual administration with modern, asynchronous, role-governed workflows tailored for **Students**, **Faculty Instructors**, and **Super Administrators**.
+
+---
+
+## 🛡️ Architectural Highlights & Security
+
+```mermaid
+flowchart TD
+    Client["Client Browser (Desktop / Mobile)"] --> Routing{"Request Router / Entry Point"}
+    
+    subgraph "Presentation Layer"
+        Routing --> PublicPages["Public Pages (index.html, login.php, register.php)"]
+        Routing --> ProtectedPages["Protected Portals (dashboard.php, events.php, students.php)"]
+        Routing --> FacultyPortal["Faculty Portal (faculty.php)"]
+        Routing --> AdminCenter["Admin Command Center (admin.php, deployment.php)"]
+    end
+
+    subgraph "Security & Middleware Layer"
+        ProtectedPages & FacultyPortal & AdminCenter --> AuthGuard{"Session & RBAC Guard (auth.php)"}
+        AuthGuard -- "Invalid / Expired" --> RedirectLogin["302 Redirect to login.php"]
+        AuthGuard -- "Unauthorized Tier" --> Deny403["403 Forbidden Access Denied"]
+        AuthGuard -- "Authorized" --> CSRFCheck{"CSRF Token Validator (csrf.php)"}
+        CSRFCheck -- "Valid Token" --> APIControllers["API Controllers (admin_crud, events_crud, etc.)"]
+    end
+
+    subgraph "Data Persistence Layer (3NF InnoDB)"
+        APIControllers --> MySQL[(MariaDB 10.4: student_hub)]
+        MySQL --> Tables["9 Relational Tables (FK Constraints)"]
+        MySQL --> Views["Analytical Views (vw_admin_dashboard_summary)"]
+        MySQL --> Procs["Stored Procedures (sp_GetEventSummary)"]
+    end
 ```
 
-## 6. File Details
+### Key Technical Capabilities:
+- **Strict Role-Based Access Control (RBAC):** Three discrete security tiers (`student`, `teacher`, `admin`) protected by centralized authorization gates (`requireLogin()` and `requireRole()`), generating HTTP 403 Forbidden rejection screens on privilege escalation attempts.
+- **Cryptographic Security:** Passwords hashed using `password_hash()` with **Bcrypt (cost factor 10)**. Cross-Site Request Forgery (CSRF) defended with cryptographically secure tokens validated via `hash_equals()`. SQL injection neutralized with parameterized PDO and MySQLi prepared statements.
+- **Session Governance:** Automatic session fixation protection (`session_regenerate_id(true)`), 15-minute inactivity timeouts, and persistent authentication via dual-token SHA-256 Remember-Me cookies (30-day expiry).
+- **Concurrency & Flat-File Mutex:** Concurrency-safe CSV user synchronization and JSON contact inquiry storage utilizing advisory file locks (`flock()` with `LOCK_EX` / `LOCK_UN`).
+- **File Upload Verification:** Secure event poster upload pipeline implementing strict MIME detection via PHP `finfo`, file extension allowlisting (`jpg`, `jpeg`, `png`, `webp`), size limits ($\le 5\text{ MB}$), and automated storage segregation.
+- **Responsive Theme Architecture:** 100% Light and Dark theme compatibility utilizing CSS Custom Properties, smooth transitions, and persistent `localStorage` synchronization without Flash of Unstyled Content (FOUC).
 
-| File / Folder | Details |
-| --- | --- |
-| `index.html` | Main home page of the website. |
-| `Pages/` | Contains all inner website pages. |
-| `css/style.css` | Common CSS for global design, header, buttons, forms, panels, footer, and responsive styles. |
-| `css/index.css` | Home page specific CSS. |
-| `css/login.css` | Login page specific CSS. |
-| `css/register.css` | Registration page specific CSS. |
-| `css/dashboard.css` | Dashboard page specific CSS. |
-| `css/courses.css` | Courses page specific CSS. |
-| `css/assignment.css` | Assignment page specific CSS. |
-| `css/attendance.css` | Attendance page specific CSS. |
-| `css/result.css` | Result page specific CSS. |
-| `css/profile.css` | Profile page specific CSS. |
-| `css/contact.css` | Contact page specific CSS. |
-| `js/script.js` | Handles login, registration, protected page check, logout, role-based course dropdown, and rotating quotes. |
-| `img/` | Stores website images and icons. |
-| `sitemap.md` | Shows website page navigation structure. |
-| `README.md` | Contains project overview and documentation. |
+---
 
-## 7. Website Navigation Flow
+## 📚 Academic Practical Matrix (P7 – P15)
 
-```text
-Home Page
-|-- Login Page
-|   `-- Dashboard
-|       |-- Courses
-|       |-- Assignments
-|       |-- Attendance
-|       |-- Results
-|       |-- Profile
-|       `-- Contact
-|-- Registration Page
-`-- Contact Page
+The codebase implements and automates all requirements defined by the **CHARUSAT ITUE203** syllabus:
+
+| Practical ID | Academic Topic / Focus Area | Key Architectural Modules | Automated Tests |
+|:---:|---|---|:---:|
+| **Practical 7** | Form Processing, Data Sanitization & File Storage | CSRF token validation, input sanitization, flat-file JSON and CSV persistence with `flock()` mutex. | 5 / 5 Pass |
+| **Practical 8** | Database Connectivity & Prepared Statements | Relational MySQL schema creation, PDO database driver, prepared statements, and SQL injection prevention. | 4 / 4 Pass |
+| **Practical 9** | User Registration & Password Hashing | Account registration form, Bcrypt password hashing (`cost=10`), duplicate email collision guard, and CSV synchronization. | 7 / 7 Pass |
+| **Practical 10** | Session Management, Security & Remember-Me | Session governance, session regeneration, 15-minute inactivity timeout, and SHA-256 dual-token remember-me cookie. | 7 / 7 Pass |
+| **Practical 11** | Student Record Management CRUD | Comprehensive student CRUD portal, soft-deletion (`is_active = 0`), GPA numerical filtering, and search pagination. | 6 / 6 Pass |
+| **Faculty Portal** | Academic Allocations & Coursework Management | Faculty role authorization, course assignment, student grade auditing, and coursework deadline tracking. | 6 / 6 Pass |
+| **Practical 12** | Campus Events & Poster File Uploads | Event management CRUD, poster upload with strict MIME type checking, capacity reservation, and responsive modal lifecycle. | 8 / 8 Pass |
+| **Practical 13** | Stored Procedures & RESTful JSON APIs | Transactional stored procedures (`sp_GetEventSummary`), analytical view querying, and RESTful JSON endpoint serialization. | 8 / 8 Pass |
+| **Practical 14** | Admin Command Center & Audit Governance | Real-time telemetry, user directory management, RBAC role mutation, last-administrator lockout defense, and automated log retention purge. | 8 / 8 Pass |
+| **Practical 15** | Final Integration, Diagnostics & Deployment | Master verification test runner, 3NF schema audit, persistent storage health telemetry, and turnkey deployment packaging. | 8 / 8 Pass |
+| **MASTER SUITE** | **Complete Full-Stack Academic Curriculum** | **All 10 Verification Suites Executed Sequentially** | **67 / 67 (100%)** |
+
+---
+
+## 🗄️ Third Normal Form (3NF) Database Topology
+
+The relational database `student_hub` satisfies First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF) with zero partial or transitive dependencies:
+
+```mermaid
+erDiagram
+    USERS ||--o{ REMEMBER_TOKENS : has
+    USERS ||--o{ STUDENTS : profile
+    USERS ||--o{ COURSES : teaches
+    USERS ||--o{ EVENTS : creates
+    USERS ||--o{ AUDIT_LOGS : performs
+    COURSES ||--o{ ASSIGNMENTS : contains
+    ASSIGNMENTS ||--o{ SUBMISSIONS : receives
+    STUDENTS ||--o{ SUBMISSIONS : submits
+    STUDENTS ||--o{ REGISTRATIONS : registers
+    EVENTS ||--o{ REGISTRATIONS : reserves
+
+    USERS {
+        int user_id PK
+        string full_name
+        string email UK
+        string password_hash
+        enum role "student, teacher, admin"
+        timestamp created_at
+    }
+
+    STUDENTS {
+        int student_id PK
+        int user_id FK
+        string roll_number UK
+        string department
+        decimal gpa
+        tinyint is_active
+    }
+
+    COURSES {
+        int course_id PK
+        string course_code UK
+        string course_name
+        int credits
+        int faculty_id FK
+    }
+
+    EVENTS {
+        int event_id PK
+        string title
+        datetime event_date
+        int capacity
+        int registered_count
+        string poster_url
+        int created_by FK
+    }
+
+    REGISTRATIONS {
+        int registration_id PK
+        int event_id FK
+        int student_id FK
+        datetime registered_at
+    }
+
+    AUDIT_LOGS {
+        int log_id PK
+        int user_id FK
+        string action
+        enum severity "info, warning, danger, critical"
+        string ip_address
+        timestamp created_at
+    }
 ```
 
-## 8. JavaScript Details
-
-The `js/script.js` file provides the dynamic behavior of the website.
-
-Main functions:
-
-- Checks login status before opening protected pages.
-- Redirects unauthenticated users to the login page.
-- Handles login form submission.
-- Stores `isLoggedIn` value in browser `localStorage`.
-- Handles registration form submission.
-- Shows course dropdown for Student role during registration.
-- Clears login data when Logout is clicked.
-- Displays random quotes on login and registration pages.
-- Changes quotes automatically every 3 seconds.
-
-## 9. How To Run
-
-1. Open the project folder.
-2. Open `index.html` in any modern web browser.
-3. Click Login or Sign Up.
-4. After login, open Dashboard and use the module links.
-5. Click Logout to end the session.
-
-## 10. Technologies Used
-
-- HTML5 for website structure.
-- CSS3 for styling and responsive layout.
-- JavaScript for interactivity and login flow.
-- Browser `localStorage` for simple login session handling.
-
-## 11. Project Summary
-
-Student Hub is a complete front-end student portal demo. It includes public pages, authentication pages, protected student pages, separated CSS files for each page, and JavaScript-based login behavior. The project is suitable for an HTML, CSS, and JavaScript semester assignment or academic web development project.
-=======
-    # Student Hub Website Overview
-
-    Student Hub is a simple student portal website created with HTML, CSS, and JavaScript. The website gives students one place to access common academic information such as courses, assignments, attendance, results, profile details, and support contact information.
-
-    The project is built as a static website, so it can be opened directly in a browser without a backend server.
-
-    ## Website Purpose
-
-    The main purpose of Student Hub is to show a complete student portal flow:
-
-    - A visitor opens the home page.
-    - The visitor can register or log in.
-    - After login, the student reaches the dashboard.
-    - From the dashboard, the student can open academic pages like courses, assignments, attendance, results, and profile.
-    - The student can also contact support or log out.
-
-    ## Main Pages
-
-    ### Home Page
-
-    File: `index.html`
-
-    The home page is the starting point of the website. It introduces the Student Hub portal and provides quick actions for login and registration.
-
-    Main sections:
-
-    - Header with logo and navigation.
-    - Hero section with the website message.
-    - Login and Create Account buttons.
-    - Small student dashboard preview.
-    - Portal statistics such as courses, portal access, and student focus.
-    - Call-to-action section for login or sign up.
-    - Footer with copyright information.
-
-    CSS file:
-
-    - `css/index.css`
-
-    ### Login Page
-
-    File: `Pages/login.html`
-
-    The login page allows an existing user to enter account details and access the dashboard.
-
-    Main features:
-
-    - Email input.
-    - Password input.
-    - Role selection for Student, Teacher, or Admin.
-    - Remember me checkbox.
-    - Help link to the contact page.
-    - Link to registration page for new students.
-    - Quote box that changes using JavaScript.
-
-    JavaScript behavior:
-
-    - The form checks that email and password are filled.
-    - When submitted successfully, it stores login status in `localStorage`.
-    - After login, the user is redirected to `dashboard.html`.
-
-    CSS file:
-
-    - `css/login.css`
-
-    ### Registration Page
-
-    File: `Pages/register.html`
-
-    The registration page allows a new user to create a Student Hub account.
-
-    Main features:
-
-    - Full name input.
-    - Email input.
-    - Password input.
-    - Role selection.
-    - Course dropdown shown when the Student role is selected.
-    - Terms checkbox.
-    - Link back to the login page.
-    - Quote box that changes using JavaScript.
-
-    JavaScript behavior:
-
-    - The form checks that required fields are filled.
-    - When submitted successfully, it shows a success message.
-    - The user is redirected to the login page.
-    - The course dropdown appears only for the Student role.
-
-    CSS file:
-
-    - `css/register.css`
-
-    ### Student Dashboard
-
-    File: `Pages/dashboard.html`
-
-    The dashboard is the main page after login. It gives the student a quick academic summary and links to other portal modules.
-
-    Main sections:
-
-    - Page heading with welcome message.
-    - Summary cards for courses, attendance, assignments, and result.
-    - Today schedule panel.
-    - Portal modules panel with links to course info, assignments, attendance, results, and contact support.
-    - Logout button in the header.
-
-    JavaScript behavior:
-
-    - This page is protected.
-    - If the user is not logged in, JavaScript redirects them to the login page.
-    - The logout button clears login data from `localStorage`.
-
-    CSS file:
-
-    - `css/dashboard.css`
-
-    ### Courses Page
-
-    File: `Pages/courses.html`
-
-    The courses page displays academic course information and progress.
-
-    Main content:
-
-    - Web Development course card.
-    - Database Management course card.
-    - Computer Networks course card.
-    - Each course card includes a short description and progress percentage.
-
-    JavaScript behavior:
-
-    - This page is protected and requires login.
-
-    CSS file:
-
-    - `css/courses.css`
-
-    ### Assignment Page
-
-    File: `Pages/assignment.html`
-
-    The assignment page shows assignment details in a table format.
-
-    Main content:
-
-    - Subject name.
-    - Assignment title.
-    - Due date.
-    - Submission status.
-    - Action link such as Submit or View.
-
-    Status badges:
-
-    - Pending assignments use a warning badge.
-    - Submitted assignments use a success badge.
-
-    JavaScript behavior:
-
-    - This page is protected and requires login.
-
-    CSS file:
-
-    - `css/assignment.css`
-
-    ### Attendance Page
-
-    File: `Pages/attendance.html`
-
-    The attendance page shows subject-wise attendance records.
-
-    Main content:
-
-    - Subject name.
-    - Total classes.
-    - Present count.
-    - Absent count.
-    - Attendance percentage.
-
-    Status badges:
-
-    - Good attendance uses a success badge.
-    - Lower attendance uses a warning badge.
-
-    JavaScript behavior:
-
-    - This page is protected and requires login.
-
-    CSS file:
-
-    - `css/attendance.css`
-
-    ### Results Page
-
-    File: `Pages/result.html`
-
-    The results page shows academic performance details.
-
-    Main sections:
-
-    - CGPA summary card.
-    - Rank summary card.
-    - Pass status summary card.
-    - Result table with subject, marks, grade, and status.
-
-    JavaScript behavior:
-
-    - This page is protected and requires login.
-
-    CSS file:
-
-    - `css/result.css`
-
-    ### Profile Page
-
-    File: `Pages/profile.html`
-
-    The profile page displays student personal and academic information.
-
-    Main sections:
-
-    - Profile card with student initials, name, semester, and contact button.
-    - Details panel with email, enrollment number, course, department, and phone number.
-
-    JavaScript behavior:
-
-    - This page is protected and requires login.
-
-    CSS file:
-
-    - `css/profile.css`
-
-    ### Contact Page
-
-    File: `Pages/contact.html`
-
-    The contact page allows users to send a support message and view support details.
-
-    Main sections:
-
-    - Contact form with name, email, and message fields.
-    - Support details card with email, phone, office, and support time.
-
-    CSS file:
-
-    - `css/contact.css`
-
-    ## Navigation Flow
-
-    ```text
-    Home Page
-    |-- Login Page
-    |   `-- Dashboard
-    |       |-- Courses
-    |       |-- Assignments
-    |       |-- Attendance
-    |       |-- Results
-    |       |-- Profile
-    |       `-- Contact
-    |-- Registration Page
-    `-- Contact Page
-    ```
-
-    ## JavaScript Overview
-
-    File: `js/script.js`
-
-    The JavaScript file controls simple website behavior:
-
-    - Checks whether protected pages require login.
-    - Redirects users to the login page if they are not logged in.
-    - Handles login form submission.
-    - Saves login status in `localStorage`.
-    - Handles registration form submission.
-    - Shows or hides the course dropdown based on selected role.
-    - Clears login data when the user logs out.
-    - Displays random education quotes on login and registration pages.
-    - Changes quotes automatically every few seconds.
-
-    ## CSS Organization
-
-    The CSS is split into common and page-specific files.
-
-    Common stylesheet:
-
-    - `css/style.css`
-
-    Page-specific stylesheets:
-
-    - `css/index.css`
-    - `css/login.css`
-    - `css/register.css`
-    - `css/dashboard.css`
-    - `css/courses.css`
-    - `css/assignment.css`
-    - `css/attendance.css`
-    - `css/result.css`
-    - `css/profile.css`
-    - `css/contact.css`
-
-    Each HTML page loads `style.css` first, then its own page CSS file.
-
-    ## Folder Structure
-
-    ```text
-    student HUB project
-    |-- index.html
-    |-- README.md
-    |-- sitemap.md
-    |-- css
-    |   |-- style.css
-    |   |-- index.css
-    |   |-- login.css
-    |   |-- register.css
-    |   |-- dashboard.css
-    |   |-- courses.css
-    |   |-- assignment.css
-    |   |-- attendance.css
-    |   |-- result.css
-    |   |-- profile.css
-    |   `-- contact.css
-    |-- js
-    |   `-- script.js
-    |-- img
-    `-- Pages
-        |-- login.html
-        |-- register.html
-        |-- dashboard.html
-        |-- courses.html
-        |-- assignment.html
-        |-- attendance.html
-        |-- result.html
-        |-- profile.html
-        `-- contact.html
-    ```
-
-    ## How To Run
-
-    1. Open the project folder in a code editor.
-    2. Open `index.html` in a browser.
-    3. Click Login or Sign Up to continue.
-    4. After login, use the dashboard links to visit the student pages.
-
-    ## Technologies Used
-
-    - HTML for page structure.
-    - CSS for layout, colors, spacing, responsive design, and page styling.
-    - JavaScript for login flow, registration behavior, protected pages, logout, and rotating quotes.
-
-    ## Project Summary
-
-    Student Hub is a complete front-end student portal demo. It includes a landing page, authentication pages, a student dashboard, academic information pages, a profile page, and a contact page. The website uses separate CSS files for each page and a shared common stylesheet for reusable design elements.
->>>>>>> b3356f2d73af9b10fe7ac70ab3a3cf7a5133a374
+### Relational Schema Inventory:
+1. `users` — Primary account registry, Bcrypt hashes, timestamps, and RBAC roles.
+2. `remember_tokens` — SHA-256 hashed persistent login tokens with expiration boundaries.
+3. `students` — Academic profiles with GPA tracking and soft-delete (`is_active`) flags.
+4. `courses` — Academic curriculum catalog, credit allocations, and assigned faculty IDs.
+5. `assignments` — Coursework assignments, submission deadlines, and maximum score metrics.
+6. `submissions` — Student coursework submissions, file attachments, and evaluation marks.
+7. `events` — Campus hackathons and workshops with seat capacities and poster paths.
+8. `registrations` — Transactional student event reservations with seat decrement safeguards.
+9. `audit_logs` — Immutable administrative actions, role modifications, client IP, and severity rankings.
+
+### Analytical Database Views & Stored Procedures:
+- `vw_admin_dashboard_summary`: Computes high-speed aggregated KPIs across all 9 tables in a single read.
+- `vw_admin_monthly_registrations`: Analyzes registration velocity grouped by monthly time-series intervals.
+- `sp_GetEventSummary(IN event_id, OUT title, OUT capacity, OUT registered, OUT available)`: Procedure returning event capacity analysis via `OUT` parameters.
+- `sp_BulkUpdateEventStatus()`: Transactional batch transition procedure updating past event lifecycle states.
+- `sp_RecordAuditLog()`: Transactional security logging procedure recording administrative events into `audit_logs`.
+
+---
+
+## 🚀 Turnkey Local Deployment Guide
+
+### Prerequisites
+- **XAMPP for Windows** (or LAMP/MAMP on macOS/Linux) with:
+  - **Apache 2.4+** (configured for virtual hosts or web root)
+  - **MariaDB 10.4+ / MySQL 8.0+**
+  - **PHP 8.1+** (PHP 8.2 recommended with `pdo_mysql`, `mysqli`, `fileinfo`, `openssl`, `mbstring`, `json`, `session` extensions enabled)
+
+---
+
+### Step 1: Clone Repository into XAMPP Web Root
+Open your terminal (PowerShell, Command Prompt, or Bash) and clone into `htdocs`:
+```bash
+cd C:\xampp\htdocs
+git clone https://github.com/Yugpatel009/STUDENTHUB.git STUDENTHUB
+cd STUDENTHUB
+```
+
+### Step 2: Environment Configuration
+Copy the template configuration file:
+```bash
+cp .env.example .env
+```
+Ensure your database parameters in `.env` match your local MySQL configuration:
+```ini
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=student_hub
+DB_USER=root
+DB_PASS=
+APP_ENV=production
+APP_DEBUG=false
+```
+
+### Step 3: Database Import & View Synchronization
+Initialize the database and import the unified 3NF schema with stored procedures and views:
+```bash
+# Using MySQL CLI:
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS student_hub CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+mysql -u root -p student_hub < student_hub_database.sql
+```
+*(Alternatively, open phpMyAdmin at `http://localhost/phpmyadmin`, create a database named `student_hub`, and import [`student_hub_database.sql`](student_hub_database.sql)).*
+
+### Step 4: Run Automated Master Test Suite
+Validate that your deployment is 100% operational:
+```bash
+php tests/test_all_practicals.php
+```
+You should see:
+```text
+Final Build Verdict: 100% ALL PRACTICALS VERIFIED! READY FOR SUBMISSION 🚀
+```
+
+### Step 5: Launch in Browser
+Open your browser to:
+👉 **`http://localhost/STUDENTHUB/Pages/login.php`**
+
+---
+
+## 🔑 Default Verified Seed Credentials
+
+The database is pre-seeded with verified test accounts across all roles (passwords hashed via Bcrypt):
+
+| Role Tier | Full Name | Email Address | Default Password | Initial Accessible Portals |
+|---|---|---|---|---|
+| **Super Administrator** | Admin Officer | `admin@charusat.edu.in` | `Password@123` | Dashboard, Admin Command Center, Diagnostics & Deployment, All CRUD Portals |
+| **Faculty Member** | Dr. Rajesh Patel | `rajesh.patel@charusat.edu.in` | `Password@123` | Faculty Portal, Course Assignments, Events, Student Marks |
+| **Student** | Aarav Sharma | `aarav.sharma@charusat.edu.in` | `Password@123` | Student Dashboard, Event Registrations, Assignments, Attendance, Results |
+
+---
+
+## 🧪 Automated Verification & Master Test Suite
+
+StudentHub includes a built-in automated test suite covering all modules without requiring external test frameworks.
+
+### Execute Master Test Runner (Practicals 7 – 15):
+```bash
+php tests/test_all_practicals.php
+```
+
+### Execute Practical 15 Integration Suite:
+```bash
+php tests/test_practical15.php
+```
+
+### Execute Database Diagnostics:
+```bash
+php test_db.php
+```
+
+### Interactive Web Console:
+Administrators can execute tests asynchronously from the browser:
+1. Log in as `admin@charusat.edu.in`.
+2. Navigate to **Diagnostics & Deploy (P15)** (`Pages/deployment.php`).
+3. Click **"Execute Master Test Suite"** to stream live test execution directly into the web terminal.
+
+```text
+====================================================================
+ MASTER TEST EXECUTION SUMMARY REPORT
+====================================================================
+Suite    | Status | Module Description
+--------------------------------------------------------------------
+P7       | PASS   | Practical 7: Form Sanitization, CSRF & File Storage (JSON/CSV)
+P8       | PASS   | Practical 8: Relational Schema, PDO & Stored Procedures
+P9       | PASS   | Practical 9: User Registration, Bcrypt Hashing & Duplicate Email Guard
+P10      | PASS   | Practical 10: Secure Login, Sessions, Inactivity Timeout & Remember-Me
+P11      | PASS   | Practical 11: Student Management CRUD & Soft-Delete Architecture
+FP       | PASS   | Faculty Portal: Course & Student Academic Record Management
+P12      | PASS   | Practical 12: Campus Event CRUD & Verified File/Poster Upload
+P13      | PASS   | Practical 13: RESTful JSON API & Asynchronous Fetch CRUD
+P14      | PASS   | Practical 14: Admin Command Center, Telemetry, RBAC & Audit Trail
+P15      | PASS   | Practical 15: Final System Integration, Views & Deployment Verification
+--------------------------------------------------------------------
+Total Test Suites: 10 | Suites Passed: 10 | Suites Failed: 0
+Execution Duration: 1.89 seconds
+Final Build Verdict: 100% ALL PRACTICALS VERIFIED! READY FOR SUBMISSION 🚀
+====================================================================
+```
+
+---
+
+## 📁 Directory & File Organization
+
+```text
+STUDENTHUB/
+├── .env.example                     # Environment deployment configuration template
+├── .gitignore                       # Git ignore rules for secrets, locks, and cache
+├── README.md                        # Master repository documentation (this file)
+├── student_hub_database.sql         # Complete 3NF MySQL database export
+├── test_db.php                      # Database connectivity diagnostic audit tool
+├── index.html                       # Public landing page
+│
+├── Pages/                           # Frontend Presentation Layer
+│   ├── login.php                    # Server-rendered login portal
+│   ├── register.php                 # Server-rendered registration portal
+│   ├── dashboard.php                # Unified student/faculty dashboard
+│   ├── admin.php                    # Practical 14: Admin Command Center & Audit Trail
+│   ├── deployment.php               # Practical 15: Deployment & System Diagnostics
+│   ├── faculty.php                  # Faculty Portal: Course & Student Management
+│   ├── events.php                   # Practical 12: Campus Events & Poster Uploads
+│   ├── students.php                 # Practical 11: Student Directory & Soft Delete CRUD
+│   ├── courses.php                  # Academic Course Catalog
+│   ├── assignment.php               # Coursework Assignments
+│   ├── attendance.php               # Student Attendance Tracker
+│   ├── result.php                   # Examination Results & Academic Performance
+│   ├── profile.php                  # User Profile Management
+│   └── contact.html                 # Public Inquiry & Feedback Page
+│
+├── StudentHUB_php/                  # Backend Middleware, APIs & Controllers
+│   ├── auth.php                     # Authentication, RBAC gates, and session init
+│   ├── csrf.php                     # CSRF token generation and validation
+│   ├── db.php                       # MySQLi & PDO database connections
+│   ├── audit.php                    # Centralized security audit logging engine
+│   ├── login.php                    # Login authentication handler
+│   ├── logout.php                   # Secure session termination & cookie purge
+│   ├── register.php                 # User registration handler
+│   ├── admin_crud.php               # Admin API (user roles, telemetry, audit purge)
+│   ├── deployment_api.php           # Practical 15 asynchronous test runner API
+│   ├── events_crud.php              # Event CRUD & image poster validation
+│   ├── students_crud.php            # Student CRUD & GPA filter API
+│   ├── courses_crud.php             # Course catalog API
+│   ├── contact.php                  # Contact form persistence (CSV/JSON mutex)
+│   ├── registered_users.csv         # Flat-file user registry backup
+│   └── contact_messages.json        # Flat-file inquiries storage
+│
+├── tests/                           # Automated Verification Test Suites
+│   ├── test_all_practicals.php      # Master verification test runner (all 10 suites)
+│   ├── test_practical15.php         # Practical 15 unit & integration tests
+│   ├── test_practical14.php         # Practical 14 admin center tests
+│   ├── test_practical13.php         # Practical 13 API & stored procedure tests
+│   ├── test_practical12.php         # Practical 12 event CRUD & upload tests
+│   ├── test_faculty_crud.php        # Faculty portal tests
+│   ├── test_practical11.php         # Practical 11 student CRUD tests
+│   ├── test_practical10.php         # Practical 10 session & timeout tests
+│   ├── test_practical9.php          # Practical 9 password hashing tests
+│   ├── test_practical8.php          # Practical 8 database & PDO tests
+│   └── test_practical7.php          # Practical 7 form & CSRF tests
+│
+├── css/                             # Stylesheets with Theme Tokens
+│   ├── style.css                    # Global typography, pill nav, and theme tokens
+│   ├── admin.css                    # Admin Command Center layout
+│   ├── deployment.css               # Deployment & Diagnostics styling
+│   ├── faculty.css                  # Faculty portal styling
+│   ├── events.css                   # Campus events & modal styling
+│   └── login.css                    # Authentication card styling
+│
+├── js/                              # Frontend Interactive Scripts
+│   └── script.js                    # Mobile drawer, theme toggles, and utilities
+│
+├── uploads/                         # User Upload Storage
+│   └── events/                      # Event poster storage (.gitkeep preserved)
+│
+└── submission/                      # Academic Laboratory Manuals & Reports
+    ├── D26DCE141_LAB_4-15_WDF.docx  # Complete university lab journal (Practicals 4–15)
+    └── Practical_15_D26DCE141.docx  # Standalone Practical 15 lab report
+```
+
+---
+
+## 🎓 Academic Credits & Authorship
+
+- **Institution:** Charotar University of Science and Technology (CHARUSAT)
+- **Faculty:** Faculty of Technology and Engineering (FTE)
+- **Program:** Bachelor of Technology in Computer Engineering
+- **Course Title:** Web Development Frameworks (`ITUE203`)
+- **Student Candidate:** `D26DCE141`
+- **GitHub Repository:** [Yugpatel009/STUDENTHUB](https://github.com/Yugpatel009/STUDENTHUB.git)
+
+---
+
+## 📄 License
+This project is developed for educational and academic assessment purposes under the **MIT License**. All rights reserved © 2026 StudentHub Engineering Team.

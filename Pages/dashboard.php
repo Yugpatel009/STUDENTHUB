@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . '/../StudentHUB_php/require_login.php';
+$currentUser = requireLogin();
+$isFaculty = in_array($currentUser['role'] ?? '', ['teacher', 'admin'], true);
+$isAdmin = ($currentUser['role'] ?? '') === 'admin';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +29,27 @@
 
         <!-- Centered Floating Pill Navigation -->
         <nav class="main-nav" aria-label="Dashboard Navigation">
-            <a href="dashboard.html" class="active">Dashboard</a>
-            <a href="courses.html">Courses</a>
-            <a href="events.html">Campus Hub</a>
-            <a href="assignment.html">Assignments</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="result.html">Results</a>
-            <a href="profile.html">Profile</a>
+            <a href="dashboard.php" class="active">Dashboard</a>
+            <?php if ($isAdmin): ?>
+                <a href="admin.php" style="color: #ef4444; font-weight: 700;">Admin Center</a>
+                <a href="deployment.php" style="color: #2563eb; font-weight: 600;">Diagnostics & Deploy</a>
+            <?php endif; ?>
+            <a href="students.php">Students</a>
+            <a href="courses.php">Courses</a>
+            <?php if ($isFaculty): ?>
+                <a href="faculty.php">Faculty Portal</a>
+            <?php endif; ?>
+            <a href="events.php">Campus Events</a>
+            <a href="assignment.php">Assignments</a>
+            <a href="attendance.php">Attendance</a>
+            <a href="result.php">Results</a>
+            <a href="profile.php">Profile</a>
         </nav>
 
         <!-- Right Corner Actions & Controls -->
         <div class="header-right">
             <div class="header-actions">
-                <a class="btn-logout" id="logoutLink" href="../index.html">Logout</a>
+                <a class="btn-logout" id="logoutLink" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
 
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle Light/Dark Theme" type="button">
@@ -53,16 +67,24 @@
         <!-- Mobile Drawer Navigation -->
         <div class="mobile-nav-drawer" id="mobileNavDrawer">
             <nav class="mobile-nav-links">
-                <a href="dashboard.html" class="active">Dashboard</a>
-                <a href="courses.html">Courses</a>
-                <a href="events.html">Campus Hub</a>
-                <a href="assignment.html">Assignments</a>
-                <a href="attendance.html">Attendance</a>
-                <a href="result.html">Results</a>
-                <a href="profile.html">Profile</a>
+                <a href="dashboard.php" class="active">Dashboard</a>
+            <?php if ($isAdmin): ?>
+                <a href="admin.php" style="color: #ef4444; font-weight: 700;">Admin Center</a>
+                <a href="deployment.php" style="color: #2563eb; font-weight: 600;">Diagnostics & Deploy</a>
+            <?php endif; ?>
+                <a href="students.php">Students</a>
+                <a href="courses.php">Courses</a>
+                <?php if ($isFaculty): ?>
+                    <a href="faculty.php">Faculty Portal</a>
+                <?php endif; ?>
+                <a href="events.php">Campus Events</a>
+                <a href="assignment.php">Assignments</a>
+                <a href="attendance.php">Attendance</a>
+                <a href="result.php">Results</a>
+                <a href="profile.php">Profile</a>
             </nav>
             <div class="mobile-drawer-actions">
-                <a class="btn-logout" style="text-align: center; justify-content: center;" id="mobileLogoutLink" href="../index.html">Logout</a>
+                <a class="btn-logout" style="text-align: center; justify-content: center;" id="mobileLogoutLink" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
         </div>
     </header>
@@ -72,9 +94,20 @@
             <div>
                 <p class="eyebrow">Overview</p>
                 <h1>Student Dashboard</h1>
-                <p>Welcome back, Yug. Here is your academic summary.</p>
+                <p>
+                    Welcome back, <strong><?= htmlspecialchars($currentUser['name'], ENT_QUOTES, 'UTF-8') ?></strong>
+                    <span style="display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; background: #3b82f6; color: #fff; margin-left: 6px;">
+                        <?= htmlspecialchars($currentUser['role'] ?? 'Student', ENT_QUOTES, 'UTF-8') ?>
+                    </span>.
+                    Here is your academic summary.
+                </p>
+                <?php if (isset($_GET['unauthorized'])): ?>
+                    <div style="background: #7f1d1d; border: 1px solid #b91c1c; color: #fca5a5; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-top: 10px;">
+                        ⚠️ <strong>Access Restricted:</strong> You do not have the required role permissions to access that module.
+                    </div>
+                <?php endif; ?>
             </div>
-            <a class="btn btn-primary" href="profile.html">View Profile</a>
+            <a class="btn btn-primary" href="profile.php">View Profile</a>
         </section>
 
         <section class="stats-grid">
@@ -113,11 +146,17 @@
             <article class="panel">
                 <h2>Portal Modules</h2>
                 <div class="module-list">
-                    <a href="courses.html">Course Info</a>
-                    <a href="events.html">Campus Hub (Events & Directory)</a>
-                    <a href="assignment.html">Assignment Details</a>
-                    <a href="attendance.html">Attendance Info</a>
-                    <a href="result.html">Results</a>
+                    <?php if ($isFaculty): ?>
+                        <a href="faculty.php" style="border-left: 3px solid var(--brand-primary); font-weight: 700; color: var(--brand-primary);">🛠️ Faculty Portal (Course & Academic Editor)</a>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                        <a href="admin.php" style="border-left: 3px solid #ef4444; font-weight: 700; color: #ef4444;">🛡️ Admin Center (Telemetry, RBAC & Audit Trail)</a>
+                    <?php endif; ?>
+                    <a href="courses.php">Course Info</a>
+                    <a href="events.php">Campus Events & Workshops</a>
+                    <a href="assignment.php">Assignment Details</a>
+                    <a href="attendance.php">Attendance Info</a>
+                    <a href="result.php">Results</a>
                     <a href="contact.html">Contact Support</a>
                 </div>
             </article>

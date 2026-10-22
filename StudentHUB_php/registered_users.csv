@@ -1,0 +1,28 @@
+"User ID","Full Name",Email,Role,Course,"Registered At","IP Address","User Agent"
+11,"Test Dual Storage User",test_dual_1791452765@charusat.edu.in,student,bca,"2026-10-08 11:46:05",127.0.0.1,PHPUnit-CLI-Test
+12,"Test User",test@gmail.com,student,bsc-it,"2026-10-08 11:54:06",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+13,"Test User",hy@gmail.com,student,bca,"2026-10-08 11:56:55",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+15,"Test Dual Storage User",test_dual_1791949856@charusat.edu.in,student,bca,"2026-10-14 05:50:56",127.0.0.1,PHPUnit-CLI-Test
+16,"Test Dual Storage User",test_dual_1791950905@charusat.edu.in,student,bca,"2026-10-14 06:08:25",127.0.0.1,PHPUnit-CLI-Test
+17,"Yug Kanasagara",drago@gmail.com,student,bca,"2026-10-14 06:16:09",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+18,new,new@gmail.com,teacher,N/A,"2026-10-14 06:27:16",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+19,"Test Dual Storage User",test_dual_1791954676@charusat.edu.in,student,bca,"2026-10-14 07:11:16",127.0.0.1,PHPUnit-CLI-Test
+20,teacher,te@gmail.com,teacher,N/A,"2026-10-14 07:16:05",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+21,"Yug Kanasagara",yugkanasagara@gmail.com,teacher,N/A,"2026-10-16 07:36:45",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+22,admin,admin@gmail.com,admin,N/A,"2026-10-16 16:31:42",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+23,"Test Dual Storage User",test_dual_1792583493@charusat.edu.in,student,bca,"2026-10-21 13:51:34",127.0.0.1,PHPUnit-CLI-Test
+24,"Test Dual Storage User",test_dual_1792584100@charusat.edu.in,student,bca,"2026-10-21 14:01:40",127.0.0.1,PHPUnit-CLI-Test
+25,"Test Dual Storage User",test_dual_1792584785@charusat.edu.in,student,bca,"2026-10-21 14:13:05",127.0.0.1,PHPUnit-CLI-Test
+26,"Test Dual Storage User",test_dual_1792586374@charusat.edu.in,student,bca,"2026-10-21 14:39:34",127.0.0.1,PHPUnit-CLI-Test
+27,yug,yug@gmail.com,student,bsc-it,"2026-10-22 07:54:17",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+7,yug,yug@gmail.com,student,bsc-it,"2026-10-22 08:35:36",::1,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+7,"Test Dual Storage User",test_dual_1792679433@charusat.edu.in,student,bca,"2026-10-22 16:30:33",127.0.0.1,PHPUnit-CLI-Test
+8,"Test Dual Storage User",test_dual_1792679505@charusat.edu.in,student,bca,"2026-10-22 16:31:45",127.0.0.1,PHPUnit-CLI-Test
+9,"Test Dual Storage User",test_dual_1792680843@charusat.edu.in,student,bca,"2026-10-22 16:54:03",127.0.0.1,PHPUnit-CLI-Test
+10,"Test Dual Storage User",test_dual_1792680971@charusat.edu.in,student,bca,"2026-10-22 16:56:11",127.0.0.1,PHPUnit-CLI-Test
+11,"Test Dual Storage User",test_dual_1792681160@charusat.edu.in,student,bca,"2026-10-22 16:59:20",127.0.0.1,PHPUnit-CLI-Test
+12,"Test Dual Storage User",test_dual_1792681519@charusat.edu.in,student,bca,"2026-10-22 17:05:19",127.0.0.1,PHPUnit-CLI-Test
+13,"Test Dual Storage User",test_dual_1792682071@charusat.edu.in,student,bca,"2026-10-22 17:14:31",127.0.0.1,PHPUnit-CLI-Test
+14,"Test Dual Storage User",test_dual_1792682324@charusat.edu.in,student,bca,"2026-10-22 17:18:44",127.0.0.1,PHPUnit-CLI-Test
+15,"Test Dual Storage User",test_dual_1792683319@charusat.edu.in,student,bca,"2026-10-22 17:35:19",127.0.0.1,PHPUnit-CLI-Test
+16,"Test Dual Storage User",test_dual_1792683547@charusat.edu.in,student,bca,"2026-10-22 17:39:07",127.0.0.1,PHPUnit-CLI-Test

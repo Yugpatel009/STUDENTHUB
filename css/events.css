@@ -943,3 +943,335 @@
         justify-content: flex-start;
     }
 }
+
+/* ==========================================================================
+   PRACTICAL 12: EVENT MANAGEMENT CRUD & POSTER UPLOAD STYLES
+   ========================================================================== */
+
+/* Event KPI Summary Grid */
+.event-kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.event-kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md, 8px);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.event-kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-primary);
+}
+
+.event-kpi-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.event-kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Events CRUD Grid */
+.events-crud-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.event-crud-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg, 12px);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.event-crud-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Poster Thumbnail Container */
+.event-poster-thumb {
+    height: 180px;
+    width: 100%;
+    background: var(--bg-subtle);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-poster-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-crud-card:hover .event-poster-thumb img {
+    transform: scale(1.05);
+}
+
+.event-category-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.cat-technical { background: rgba(59, 130, 246, 0.9); color: #fff; }
+.cat-workshop  { background: rgba(245, 158, 11, 0.9); color: #fff; }
+.cat-cultural  { background: rgba(168, 85, 247, 0.9); color: #fff; }
+.cat-sports    { background: rgba(16, 185, 129, 0.9); color: #fff; }
+.cat-seminar   { background: rgba(14, 165, 233, 0.9); color: #fff; }
+
+.event-status-pill {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(8px);
+}
+
+.status-upcoming  { background: rgba(16, 185, 129, 0.9); color: #fff; }
+.status-ongoing   { background: rgba(59, 130, 246, 0.9); color: #fff; }
+.status-completed { background: rgba(100, 116, 139, 0.9); color: #fff; }
+.status-cancelled { background: rgba(239, 68, 68, 0.9); color: #fff; }
+
+.event-card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card-code {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brand-primary);
+    background: var(--bg-subtle);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.event-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 10px;
+    line-height: 1.35;
+}
+
+.event-card-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-card-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 8px 0 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+}
+
+/* Seats Meter */
+.event-seats-bar {
+    background: var(--bg-subtle);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.event-seats-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #3b82f6);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.event-seats-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.event-card-footer {
+    padding: 14px 20px;
+    background: var(--bg-subtle);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Poster Upload Zone in Modal */
+.poster-dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    background: var(--bg-subtle);
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+    position: relative;
+}
+
+.poster-dropzone:hover {
+    border-color: var(--brand-primary);
+    background: var(--bg-card);
+}
+
+.poster-preview-box {
+    margin-top: 12px;
+    display: none;
+    text-align: center;
+}
+
+.poster-preview-img {
+    max-height: 150px;
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+}
+
+.file-spec-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* ==========================================================================
+   EVENT MODAL POPUP COMPONENT (Practical 12)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-overlay.open,
+.modal-overlay.active {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.modal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg, 14px);
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px 28px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    position: relative;
+    color: var(--text-primary);
+    box-sizing: border-box;
+    animation: eventModalIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes eventModalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+

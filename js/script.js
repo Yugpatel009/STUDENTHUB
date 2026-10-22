@@ -5,31 +5,7 @@
  * ==========================================================================
  */
 
-// --- 1. AUTHENTICATION & ACCESS CONTROL ---
-function checkAuthentication() {
-    var path = window.location.pathname;
-    var page = path.split("/").pop();
-
-    // List of pages that require login
-    if (page === "dashboard.html" ||
-        page === "courses.html" ||
-        page === "assignment.html" ||
-        page === "attendance.html" ||
-        page === "result.html" ||
-        page === "profile.html") {
-
-        // If not logged in, redirect to login page
-        if (localStorage.getItem("isLoggedIn") !== "true") {
-            window.location.href = "login.html";
-        }
-    }
-}
-
-// Run auth check immediately
-checkAuthentication();
-
-
-// --- 2. LIGHT / DARK THEME SWITCHER ---
+// --- 1. LIGHT / DARK THEME SWITCHER ---
 var THEME_STORAGE_KEY = "studenthub_theme";
 
 function getActiveTheme() {
@@ -87,7 +63,7 @@ function initThemeSwitcher() {
 }
 
 
-// --- 3. RESPONSIVE HAMBURGER MENU ---
+// --- 2. RESPONSIVE HAMBURGER MENU ---
 function initHamburgerMenu() {
     var hamburgerBtn = document.getElementById("hamburgerBtn");
     var navGroup = document.getElementById("mobileNavDrawer") || document.getElementById("headerNavGroup");
@@ -153,7 +129,7 @@ function initHamburgerMenu() {
 }
 
 
-// --- 4. NOTIFICATION BANNER COMPONENT ---
+// --- 3. NOTIFICATION BANNER COMPONENT ---
 function initNotificationBanner() {
     var banner = document.getElementById("notificationBanner");
     var closeBtn = document.getElementById("closeBannerBtn");
@@ -175,7 +151,7 @@ function initNotificationBanner() {
 }
 
 
-// --- 4B. NOTIFICATION DROPDOWN COMPONENT ---
+// --- 3B. NOTIFICATION DROPDOWN COMPONENT ---
 function initNotificationDropdown() {
     var notificationBtn = document.getElementById("notificationBtn");
     var notificationDropdown = document.getElementById("notificationDropdown");
@@ -254,7 +230,7 @@ function initNotificationDropdown() {
 }
 
 
-// --- 5. MODAL POPUP SYSTEM ---
+// --- 4. MODAL POPUP SYSTEM ---
 function initModalSystem() {
     function openModal(modal) {
         if (!modal) return;
@@ -318,7 +294,7 @@ function initModalSystem() {
 }
 
 
-// --- 6. IMAGE / CONTENT SLIDER (CAROUSEL) ---
+// --- 5. IMAGE / CONTENT SLIDER (CAROUSEL) ---
 function initSlider() {
     var track = document.getElementById("carouselTrack");
     var slides = document.querySelectorAll(".carousel-slide");
@@ -450,7 +426,7 @@ function initSlider() {
 }
 
 
-// --- 7. COLLAPSIBLE FAQ (ACCORDION) ---
+// --- 6. COLLAPSIBLE FAQ (ACCORDION) ---
 function initAccordion() {
     var faqItems = document.querySelectorAll(".faq-item");
     if (faqItems.length === 0) return;
@@ -486,7 +462,7 @@ function initAccordion() {
 }
 
 
-// --- 8. FORM HANDLING & EXISTING WORKFLOWS ---
+// --- 7. FORM HANDLING ---
 // Role dropdown toggle for student course
 var roleSelect = document.getElementById("login-role");
 var courseGroup = document.getElementById("course-group");
@@ -502,51 +478,6 @@ if (roleSelect !== null && courseGroup !== null && courseSelect !== null) {
             courseSelect.required = false;
             courseSelect.value = "";
         }
-    });
-}
-
-// Login form submission
-var loginForm = document.getElementById("loginForm");
-if (loginForm !== null) {
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var email = document.getElementById("login-email").value;
-        var password = document.getElementById("login-password").value;
-
-        if (email === "" || password === "") {
-            alert("Please fill in all fields!");
-        } else {
-            localStorage.setItem("isLoggedIn", "true");
-            localStorage.setItem("email", email);
-            window.location.href = "dashboard.html";
-        }
-    });
-}
-
-// Sign up form submission
-var registerForm = document.getElementById("registerForm");
-if (registerForm !== null) {
-    registerForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        var name = document.getElementById("student-name").value;
-        var email = document.getElementById("student-email").value;
-        var password = document.getElementById("student-password").value;
-
-        if (name === "" || email === "" || password === "") {
-            alert("Please fill in all fields!");
-        } else {
-            alert("Account created successfully for " + name + "! Please login.");
-            window.location.href = "login.html";
-        }
-    });
-}
-
-// Logout link session cleanup
-var logoutLink = document.getElementById("logoutLink");
-if (logoutLink !== null) {
-    logoutLink.addEventListener("click", function () {
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("email");
     });
 }
 
@@ -580,7 +511,7 @@ if (quoteEl !== null && authorEl !== null) {
 }
 
 
-// --- 9. DOM INITIALIZATION ---
+// --- 8. DOM INITIALIZATION ---
 document.addEventListener("DOMContentLoaded", function () {
     initThemeSwitcher();
     initHamburgerMenu();

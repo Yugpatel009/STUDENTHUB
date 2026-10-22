@@ -1,0 +1,100 @@
+# ==============================================================================
+# STUDENT HUB - GIT IGNORE SPECIFICATION
+# Charotar University of Science and Technology (CHARUSAT) - FTE ITUE203
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Environment & Sensitive Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.backup
+.env.local
+.env.*.local
+*.env
+
+# Keep configuration template
+!.env.example
+
+# ------------------------------------------------------------------------------
+# Temporary Files, Logs & Cookie Jars
+# ------------------------------------------------------------------------------
+*.log
+error_log
+access_log
+cookies.txt
+cookie*.txt
+*cookie*.txt
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ------------------------------------------------------------------------------
+# Microsoft Word & Office Temporary Lock Files
+# ------------------------------------------------------------------------------
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.pptx
+
+# ------------------------------------------------------------------------------
+# Operating System Generated Files
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+
+# ------------------------------------------------------------------------------
+# IDE & Code Editor Workspace Settings
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.sln
+
+# ------------------------------------------------------------------------------
+# Dependency Directories (Composer / Node / Python)
+# ------------------------------------------------------------------------------
+vendor/
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# ------------------------------------------------------------------------------
+# User Uploads (Preserve directory structure via .gitkeep)
+# ------------------------------------------------------------------------------
+uploads/events/*
+!uploads/events/.gitkeep
+
+# ------------------------------------------------------------------------------
+# Academic Practical Documentation Files (Preserve README.md)
+# ------------------------------------------------------------------------------
+PRACTICAL_*_DOCUMENTATION.md
+*_DOCUMENTATION.md
+*DOCUMENTATION*.md
+!README.md

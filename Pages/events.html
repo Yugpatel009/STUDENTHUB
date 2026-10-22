@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Hub - Campus Hub & Events Explorer</title>
     <meta name="description" content="Explore campus events, student profiles, academic circulars, and FAQs dynamically fetched from external JSON files using Fetch API.">
+    <meta http-equiv="refresh" content="0; url=events.php">
+    <script>window.location.replace("events.php");</script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/events.css">
     <script>
@@ -25,19 +27,19 @@
 
         <!-- Centered Floating Navigation -->
         <nav class="main-nav" aria-label="Campus Hub Navigation">
-            <a href="dashboard.html">Dashboard</a>
-            <a href="courses.html">Courses</a>
+            <a href="dashboard.php">Dashboard</a>
+            <a href="courses.php">Courses</a>
             <a href="events.html" class="active">Campus Hub</a>
-            <a href="assignment.html">Assignments</a>
-            <a href="attendance.html">Attendance</a>
-            <a href="result.html">Results</a>
-            <a href="profile.html">Profile</a>
+            <a href="assignment.php">Assignments</a>
+            <a href="attendance.php">Attendance</a>
+            <a href="result.php">Results</a>
+            <a href="profile.php">Profile</a>
         </nav>
 
         <!-- Right Header Actions -->
         <div class="header-right">
             <div class="header-actions">
-                <a class="btn-logout" id="logoutLink" href="../index.html">Logout</a>
+                <a class="btn-logout" id="logoutLink" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
 
             <!-- Light/Dark Mode Switcher -->
@@ -58,17 +60,17 @@
         <div class="mobile-nav-drawer" id="mobileNavDrawer">
             <nav class="mobile-nav-links">
                 <a href="../index.html">Home</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="courses.html">Courses</a>
+                <a href="dashboard.php">Dashboard</a>
+                <a href="courses.php">Courses</a>
                 <a href="events.html" class="active">Campus Hub</a>
-                <a href="assignment.html">Assignments</a>
-                <a href="attendance.html">Attendance</a>
-                <a href="result.html">Results</a>
-                <a href="profile.html">Profile</a>
+                <a href="assignment.php">Assignments</a>
+                <a href="attendance.php">Attendance</a>
+                <a href="result.php">Results</a>
+                <a href="profile.php">Profile</a>
                 <a href="contact.html">Contact</a>
             </nav>
             <div class="mobile-drawer-actions">
-                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../index.html">Logout</a>
+                <a class="btn-logout" style="text-align: center; justify-content: center;" href="../StudentHUB_php/logout.php">Logout</a>
             </div>
         </div>
     </header>
